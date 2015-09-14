@@ -1,0 +1,27 @@
+body, html
+{
+    width: 100%;
+}
+
+.main-wrapper{
+    padding: 0 0.5rem;
+    margin: 0 auto;
+    max-width: 60% !important;
+    width: 50%;
+   /* min-width: 0rem !important;*/ 
+}
+
+.container{
+}
+
+
+.content-wrapper{
+    padding: 0 0rem;
+    margin: 0 auto;
+    max-width: 100% !important;
+    width: 100%;
+    display: block;
+    align-items: left;
+    top:50%;
+   /* min-width: 0rem !important;*/ 
+}
