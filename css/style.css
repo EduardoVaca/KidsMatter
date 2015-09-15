@@ -15,7 +15,7 @@ body, html
 }
 
 .imagen-menu{
-    max-width: 85rem;   
+    max-width: 85rem;
 }
 
 .opciones-menu{
@@ -43,5 +43,11 @@ body, html
 .busqueda-actividades{
     color: white;
     margin: 1.5rem 0.3rem;
+}
+
+#casos{
+  align: center;
+  display: inline-block;
+  text-align: center;
 }
 
