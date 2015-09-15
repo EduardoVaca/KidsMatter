@@ -8,7 +8,7 @@ body, html
     margin: 0 auto;
     max-width: 60% !important;
     width: 50%;
-   /* min-width: 0rem !important;*/ 
+   /* min-width: 0rem !important;*/
 }
 
 .container{
@@ -23,5 +23,9 @@ body, html
     display: block;
     align-items: left;
     top:50%;
-   /* min-width: 0rem !important;*/ 
+   /* min-width: 0rem !important;*/
+}
+
+.labelRegister{
+  font-size: 20px;
 }

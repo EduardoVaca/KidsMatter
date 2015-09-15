@@ -8,53 +8,79 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
     </head>
 <body class="cyan">
+
     <div class="container">
+
+      <div align="center" style="margin-left: 15px">
+        <h4 class="white-text thin">Kids Matter</h4>
+        <img src="img/kids1.png" width="200px">
+      </div>
+
         <div class="main-wrapper">
-            <div class="row card-panel teal lighten-3 zdepth-3">
-                <div class="input-field col s12">
-                    <input id="Institucion" class="validate" type="text">
-                    <label for="Institucion">Institucion</label>
+            <div class="row card-panel teal lighten-2 zdepth-3">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s7">
+                    <input id="nombreInstitucion" type="text" class="validate white-text thin labelRegister">
+                    <label for="nombreInstitucion" class="white-text thin labelRegister">Institución</label>
+                  </div>
                 </div>
-                <div class="input-field col s12">
-                    <input id="Institucion" class="validate" type="text">
-                    <label for="Institucion">Telefono</label>
+
+                <div class="row">
+                  <div class="input-field col s7">
+                    <input id="correoInstitucion" type="text" class="validate white-text thin labelRegister">
+                    <label for="correoInstitucion" class="white-text thin labelRegister">Correo</label>
+                  </div>
                 </div>
-                <div class="input-field col s12">
-                    <input id="Institucion" class="validate" type="email">
-                    <label for="Institucion">Correo</label>
+
+                <div class="row">
+                  <div class="input-field col s7">
+                    <input id="telefonoInstitucion" type="text" class="validate white-text thin labelRegister">
+                    <label for="telefonoInstitucion" class="white-text thin labelRegister">Teléfono</label>
+                  </div>
                 </div>
-                <div class="input-field col s12">
-                    <input id="Institucion" class="validate" type="password">
-                    <label for="Institucion">Contraseña</label>
+
+                <div class="row">
+                  <div class="input-field col s7">
+                    <input id="primerPassword" type="password" class="validate white-text thin labelRegister">
+                    <label for="primerPassword" class="white-text thin labelRegister">Contraseña</label>
+                  </div>
                 </div>
-                <div class="input-field col s12">
-                    <input id="Institucion" class="validate" type="password">
-                    <label for="Institucion">Contraseña</label>
+
+                <div class="row">
+                  <div class="input-field col s7">
+                    <input id="secondPassword" type="password" class="validate white-text thin labelRegister">
+                    <label for="secondPassword" class="white-text thin labelRegister">Confirmación contraseña</label>
+                  </div>
                 </div>
-                <div class="col s12">
-                    <form action="#" class="inherit">
-                        <div class="file-field input-field s12">
-                          <input class="file-path validate" type="text"/>
-                            <div class="btn">
-                                <span>Logo</span>
-                                <input type="file" />
-                            </div>
-                        </div>
-                    </form>
-                </div>
+
+
+                  <div class="file-field input-field">
+                    <div class="btn">
+                      <span>Logo</span>
+                      <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                      <input class="file-path validate" type="text">
+                    </div>
+                  </div>
+                </form>
+
+            </div>
+            <div class="row left">
+              <a class="btn waves-effect waves-light right" href="Login.html">Regresar</a>
             </div>
             <div class="row">
                 <button class="btn waves-effect waves-light right" type="submit" name="action">
                 <i class="material-icons">Registrarse</i>
               </button>
-
             </div>
         </div>
-        
+
     </div>
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script> 
+    <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
-</html>   
+</html>
