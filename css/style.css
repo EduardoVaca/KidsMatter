@@ -14,18 +14,24 @@ body, html
 .container{
 }
 
+.imagen-menu{
+    max-width: 85rem;   
+}
+
+.opciones-menu{
+    position:relative;
+    top: 6rem;
+    padding: 1.4rem;
+}
 
 .content-wrapper{
     padding: 0 0rem;
     margin: 0 auto;
     max-width: 100% !important;
     width: 100%;
-    display: block;
-    align-items: left;
-    top:50%;
-   /* min-width: 0rem !important;*/
 }
 
 .labelRegister{
   font-size: 20px;
 }
+
