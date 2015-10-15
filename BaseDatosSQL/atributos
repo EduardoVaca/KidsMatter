@@ -1,0 +1,29 @@
+INSTITUCION
+	nombre
+	correo
+	telefono
+	direccion
+	logo
+
+NIÑO
+	CURP
+	nombre
+	fecha nacimiento
+	foto
+	sexo
+
+MATERIA
+	nombre
+	descripcion
+
+GRADO
+	grado
+
+ESTADO
+	nombre
+
+EVENTO
+	nombre
+	descripcion
+	sede
+	foto

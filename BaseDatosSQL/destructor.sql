@@ -1,0 +1,14 @@
+DROP TABLE HasRole;
+DROP TABLE WorksInInstitution;
+DROP TABLE ROL;
+DROP TABLE User;
+DROP TABLE ReportCard;
+DROP TABLE CreatesEvent;
+DROP TABLE AttendsToEvent;
+DROP TABLE BelongsToInstitution;
+DROP TABLE Institution;
+DROP TABLE Event;
+DROP TABLE Course;
+DROP TABLE Child;
+DROP TABLE Grade;
+DROP TABLE State;
