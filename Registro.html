@@ -18,42 +18,34 @@
 
         <div class="main-wrapper">
             <div class="row card-panel teal lighten-2 zdepth-3">
-              <form class="col s12">
+              <form class="col s12" action="registrarInstitucion.php" method="post">
                 <div class="row">
                   <div class="input-field col s7">
-                    <input id="nombreInstitucion" type="text" class="validate white-text thin labelRegister">
+                    <input name="nombreInstitucion" type="text" class="validate white-text thin labelRegister">
                     <label for="nombreInstitucion" class="white-text thin labelRegister">Institución</label>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="input-field col s7">
-                    <input id="correoInstitucion" type="text" class="validate white-text thin labelRegister">
+                    <input name="correoInstitucion" type="text" class="validate white-text thin labelRegister">
                     <label for="correoInstitucion" class="white-text thin labelRegister">Correo</label>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="input-field col s7">
-                    <input id="telefonoInstitucion" type="text" class="validate white-text thin labelRegister">
+                    <input name="telefonoInstitucion" type="text" class="validate white-text thin labelRegister">
                     <label for="telefonoInstitucion" class="white-text thin labelRegister">Teléfono</label>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="input-field col s7">
-                    <input id="primerPassword" type="password" class="validate white-text thin labelRegister">
-                    <label for="primerPassword" class="white-text thin labelRegister">Contraseña</label>
+                    <input name="direccionInstitucion" type="text" class="validate white-text thin labelRegister">
+                    <label for="direccionInstitucion" class="white-text thin labelRegister">Dirección</label>
                   </div>
                 </div>
-
-                <div class="row">
-                  <div class="input-field col s7">
-                    <input id="secondPassword" type="password" class="validate white-text thin labelRegister">
-                    <label for="secondPassword" class="white-text thin labelRegister">Confirmación contraseña</label>
-                  </div>
-                </div>
-
 
                   <div class="file-field input-field">
                     <div class="btn">
@@ -63,6 +55,10 @@
                     <div class="file-path-wrapper">
                       <input class="file-path validate" type="text">
                     </div>
+                  </div>
+
+                  <div>
+                    <input type="submit" value="Registrar">
                   </div>
                 </form>
 
