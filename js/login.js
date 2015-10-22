@@ -18,6 +18,10 @@ function isAcceptedUser(){
     alert(data);
     var object = jQuery.parseJSON(data);
     document.getElementById("debug").innerHTML = "DATA: " + object.response;
+    
+    if(object.response == "accepted"){
+      window.location.replace("Menu.html");
+    }
   });
 
 }

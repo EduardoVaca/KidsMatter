@@ -58,7 +58,7 @@
     $_SESSION["institutionId"] = $json["institutionId"];
     $_SESSION["rolId"] = $json["rolId"];
 
-    header('Location: Menu.html');
+    //header('Location: Menu.html');
   }
 
  ?>
