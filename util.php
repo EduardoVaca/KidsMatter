@@ -21,24 +21,4 @@
 	}
 
 
-	function insertIntitution($name, $email, $phone, $address){
-
-		$conn = connectToDataBase();
-
-		$sql = "INSERT INTO Institution (name, email, phone, address) VALUES (\"" . $name . "\", \"" .
-				$email . "\", \"" . $phone . "\", \"" . $address . "\");";
-
-		if (mysqli_query($conn, $sql)) {
-		    echo "New record created successfully";
-		    closeDb($conn);
-		    return true;
-		} else {
-		    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-		    closeDb($conn);
-		    return false;
-		}
-
-		closeDb($conn);
-	}
-
 ?>

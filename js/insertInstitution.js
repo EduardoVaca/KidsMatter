@@ -21,7 +21,7 @@ function insertInstitutionRequest(){
           address: insAddress.value
         },
         function(data, status){
-          alert("Data: " + data + "\nStatus: " + status);
+          document.getElementById("debug").innerHTML = "Data: " + data + " " + status;
         }
   );
 }

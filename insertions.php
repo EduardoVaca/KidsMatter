@@ -4,9 +4,9 @@
 
   $action = "";
 
-  if(isset($_POST['action']) && function_exists($_POST['action'])){
-    $action = $_POST['action'];
-  }
+  
+  $action = $_POST['action'];
+  
 
   switch ($action) {
     case 'insertInstitution':
@@ -22,7 +22,7 @@
   }
 
 
-  function insertIntitution($name, $email, $phone, $address){
+  function insertInstitution($name, $email, $phone, $address){
 
 		$conn = connectToDataBase();
 
