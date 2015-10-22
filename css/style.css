@@ -21,7 +21,6 @@ body, html
 .opciones-menu{
     position:relative;
     top: 6rem;
-    padding: 1.4rem;
 }
 
 .content-wrapper{
@@ -49,5 +48,9 @@ body, html
   align: center;
   display: inline-block;
   text-align: center;
+}
+
+.btnTabla{
+    font-size: 14px;
 }
 

@@ -20,6 +20,11 @@
                     
                     
                     <!--
+
+
+
+                    agregar funciones para ver boleta
+
                     <div class="input-field col s3">
                         <input id="nombreActividad" type="text" class="validate white-text thin labelRegister">
                         <label for="nombreInstitucion" class="white-text thin labelRegister">Nombre</label>
@@ -58,6 +63,7 @@
                               <th data-field="id" >Nombre</th>
                               <th data-field="date" >Edad</th>
                               <th data-field="details" >Tiempo en la Casa</th>
+                              <th data-field="details" >Boletas</th>
                           </tr>
                         </thead>
 
@@ -65,7 +71,7 @@
                            <tr>
                             <td>Mario Pérez López</td>
                             <td>15 años</td>
-                            <td class=" flow-text">4 años</td>
+                            <td class=" flow-text">4 años</td>  
                           </tr>
                           <tr>
                             <td>Julian Niebieskikwiat </td>
@@ -91,13 +97,13 @@
 <!-- busqueda fecha y nombre -->
     <!--Import jQuery before materialize.js-->
     
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
     <script>
     $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
     selectYears: 15 // Creates a dropdown of 15 years to control year
   });
     </script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 </html>

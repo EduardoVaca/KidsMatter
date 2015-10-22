@@ -25,6 +25,7 @@
                       <input id="idBusqueda" type="text" class="validate cyan-text thin labelRegister">
                       <label for="idBusqueda" class="black-text labelRegister">Nombre</label>
                   </div>
+                  
                   <div class="input-field col s4">
                     <select>
                       <option value="">Escolaridad</option>
@@ -41,23 +42,27 @@
                       <option value="3">Option 3</option>
                     </select>
                 </div>
-                <div class="input-field col s12">
+                <div class="col s12">
+                    <a class="btn waves-effect waves-light right">Buscar</a>  
+                </div>
+                <div id="editable" class="input-field col s12">
                   <!-- parte a modificar con php -->
                   <table class="striped justified centered teal lighten-3 z-depth-1 tabla-actividades ">
                         <thead>
                           <tr>
                               <th data-field="id" >Nombre</th>
-                              <th data-field="escolaridad" >Agregar</th>
-                              
+                              <th data-field="escolaridad" >Boletas</th>
                           </tr>
                         </thead>
 
                         <tbody>
                            <tr>
-                            <td> Test
+                            <td>
+                                <!--insertar tablas con php y jquery-->
+                                <p>Clase</p>
                             </td>
                             <td>
-                                <a class="btn-floating medium waves-effect waves-light cyan z-depth-1" href=""><i class="material-icons">add</i></a>
+                                <button id="boletas" class="btn waves-effect waves-light center btnTabla">Ver</button>
                                 <!-- parte a modificar con php 
                             Buscar nino
                             mandar ajax rellenar tabla, sleccionar nino y hacer fade para
@@ -66,9 +71,7 @@
 -->
                                   
                             </td>
-                            <td><!-- parte a modificar con php -->
-                                  
-                            </td>
+                            
                           </tr>
                           <tr>
                             <!-- parte a modificar con php 
@@ -83,7 +86,7 @@
                 </div>
                 <div class="col right">
                 <br>
-                <a class="btn-floating medium waves-effect waves-light cyan z-depth-1" href=""><i class="material-icons">add</i></a>
+                <a class="btn-floating medium waves-effect waves-light cyan z-depth-1" href="RegistroBoleta.html"><i class="material-icons">add</i></a>
                 </div>
             </form>
 
@@ -99,5 +102,6 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script>$(document).ready(function() { $('select').material_select();});</script>
+    <script type="text/javascript" src="/js/script.js"></script>
 </body>
 </html>
