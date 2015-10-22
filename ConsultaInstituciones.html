@@ -21,44 +21,28 @@
         <div class="main-wrapper">
             <div class="row card-panel teal lighten-2 zdepth-3 ">
               <form class="col s12">
-                  <div class="input-field col s4">
+                  <div class="input-field col s12">
                       <input id="idBusqueda" type="text" class="validate cyan-text thin labelRegister">
                       <label for="idBusqueda" class="black-text labelRegister">Nombre</label>
                   </div>
-                  <div class="input-field col s4">
-                    <select>
-                      <option value="">Escolaridad</option>
-                      <option value="1">Option 1</option>
-                      <option value="2">Option 2</option>
-                      <option value="3">Option 3</option>
-                    </select>
-                </div>
-                <div class="input-field col s4">
-                    <select>
-                      <option value="">Grado</option>
-                      <option value="1">Option 1</option>
-                      <option value="2">Option 2</option>
-                      <option value="3">Option 3</option>
-                    </select>
-                </div>
+                  
                 <div class="input-field col s12">
                   <!-- parte a modificar con php -->
                   <table class="striped justified centered teal lighten-3 z-depth-1 tabla-actividades ">
                         <thead>
                           <tr>
                               <th data-field="id" >Nombre</th>
-                              <th data-field="escolaridad" >Agregar</th>
+                              <th data-field="direccion" >Dirección</th>
+                              <th data-field="telefono" >Telefono</th>
                               
                           </tr>
                         </thead>
 
                         <tbody>
                            <tr>
-                            <td> Test
-                            </td>
                             <td>
-                                <a class="btn-floating medium waves-effect waves-light cyan z-depth-1" href=""><i class="material-icons">add</i></a>
-                                <!-- parte a modificar con php 
+                            </td>
+                            <td><!-- parte a modificar con php 
                             Buscar nino
                             mandar ajax rellenar tabla, sleccionar nino y hacer fade para
                             reemplazar con tabla de boleta
@@ -83,7 +67,7 @@
                 </div>
                 <div class="col right">
                 <br>
-                <a class="btn-floating medium waves-effect waves-light cyan z-depth-1" href=""><i class="material-icons">add</i></a>
+                <a class="btn-floating medium waves-effect waves-light cyan z-depth-1" href="RegistrarInstitucion.html"><i class="material-icons">add</i></a>
                 </div>
             </form>
 
