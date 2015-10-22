@@ -28,12 +28,14 @@
 
     closeDb($conn);
 
+    $array = array();
     if(mysqli_num_rows($result) > 0){
-      echo "User ACCEPTED";
+      $array["response"] = "accepted";
     }else{
-      echo "Invalid USER";
+      $array["response"] = "declined";
     }
 
+    echo json_encode($array);
   }
 
  ?>
