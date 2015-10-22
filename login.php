@@ -5,7 +5,7 @@
   $action = $_GET["action"];
 
   switch ($action) {
-    case 'getUserData':
+    case "getUserData":
       $username = $_GET["username"];
       $password = $_GET["password"];
       validateUser($username, $password);
