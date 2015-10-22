@@ -15,8 +15,11 @@ function isAcceptedUser(){
     username: username.value,
     password: password.value
   }, function(data){
+    alert(data);
     var object = jQuery.parseJSON(data);
     document.getElementById("debug").innerHTML = "DATA: " + object.response;
+
+    if
   });
 
 }

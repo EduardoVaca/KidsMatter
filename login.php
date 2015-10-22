@@ -26,15 +26,26 @@
 
     $result = mysqli_query($conn, $sql);
 
-    closeDb($conn);
-
     $array = array();
     if(mysqli_num_rows($result) > 0){
       $array["response"] = "accepted";
+
+      $sql = "SELECT rolId, institutionId
+              FROM HasRole hr, WorksInInstitution wi
+              WHERE hr.userName = \"" . $username . "\" AND
+              hr.userName = wi.userName;";
+
+      $result = mysqli_query($conn, $sql);
+      if($row = mysqli_fetch_assoc($result)){
+        $array["rolId"] = $row["rolId"];
+        $array["institutionId"] = $row["institutionId"];
+      }
+
     }else{
       $array["response"] = "declined";
     }
 
+    closeDb($conn);
     echo json_encode($array);
   }
 
