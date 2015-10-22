@@ -18,31 +18,31 @@
 
         <div class="main-wrapper">
             <div class="row card-panel teal lighten-2 zdepth-3">
-              <form class="col s12" action="registrarInstitucion.php" method="post">
+              <form class="col s12">
                 <div class="row">
                   <div class="input-field col s7">
-                    <input name="nombreInstitucion" type="text" class="validate white-text thin labelRegister">
+                    <input id="nombreInstitucion" type="text" class="validate white-text thin labelRegister">
                     <label for="nombreInstitucion" class="white-text thin labelRegister">Institución</label>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="input-field col s7">
-                    <input name="correoInstitucion" type="text" class="validate white-text thin labelRegister">
+                    <input id="correoInstitucion" type="text" class="validate white-text thin labelRegister">
                     <label for="correoInstitucion" class="white-text thin labelRegister">Correo</label>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="input-field col s7">
-                    <input name="telefonoInstitucion" type="text" class="validate white-text thin labelRegister">
+                    <input id="telefonoInstitucion" type="text" class="validate white-text thin labelRegister">
                     <label for="telefonoInstitucion" class="white-text thin labelRegister">Teléfono</label>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="input-field col s7">
-                    <input name="direccionInstitucion" type="text" class="validate white-text thin labelRegister">
+                    <input id="direccionInstitucion" type="text" class="validate white-text thin labelRegister">
                     <label for="direccionInstitucion" class="white-text thin labelRegister">Dirección</label>
                   </div>
                 </div>
@@ -56,10 +56,6 @@
                       <input class="file-path validate" type="text">
                     </div>
                   </div>
-
-                  <div>
-                    <input type="submit" value="Registrar">
-                  </div>
                 </form>
 
             </div>
@@ -67,8 +63,8 @@
               <a class="btn waves-effect waves-light right" href="Login.html">Regresar</a>
             </div>
             <div class="row align-center">
-                <button class="btn waves-effect waves-light right" type="submit" name="action">
-                <i class="material-icons">Registrarse</i>
+                <button id="registrar" class="btn waves-effect waves-light right" type="submit" name="action">
+                <i class="material-icons">Registrar</i>
               </button>
             </div>
         </div>
@@ -78,5 +74,6 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/insertIntitution.js"></script>
 </body>
 </html>

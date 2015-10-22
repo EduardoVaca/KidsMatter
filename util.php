@@ -1,11 +1,11 @@
 <?php
-	
+
 	function connectToDataBase(){
 
-		$servername = "mysql16.000webhost.com";
-		$username = "a2204124_admin";
-		$password = "KM%2015_daw";
-		$database = "a2204124_km";
+		$servername = getenv('IP');
+		$username = getenv('C9_USER');
+		$password = "";
+		$database = "KidsMatter";
 
 		$conection = mysqli_connect($servername, $username, $password, $database);
 
@@ -25,7 +25,7 @@
 
 		$conn = connectToDataBase();
 
-		$sql = "INSERT INTO Institution (name, email, phone, address) VALUES (\"" . $name . "\", \"" . 
+		$sql = "INSERT INTO Institution (name, email, phone, address) VALUES (\"" . $name . "\", \"" .
 				$email . "\", \"" . $phone . "\", \"" . $address . "\");";
 
 		if (mysqli_query($conn, $sql)) {
