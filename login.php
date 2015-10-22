@@ -39,6 +39,9 @@
       if($row = mysqli_fetch_assoc($result)){
         $array["rolId"] = $row["rolId"];
         $array["institutionId"] = $row["institutionId"];
+        $array["userName"] = $username;
+
+        startSession($array);
       }
 
     }else{
@@ -47,6 +50,15 @@
 
     closeDb($conn);
     echo json_encode($array);
+  }
+
+  function startSession($json){
+    session_start();
+    $_SESSION["userName"] = $json["userName"];
+    $_SESSION["institutionId"] = $json["institutionId"];
+    $_SESSION["rolId"] = $json["rolId"];
+
+    header('Location: Menu.html');
   }
 
  ?>
