@@ -1,5 +1,7 @@
 <?php
 
+  session_start();
+
   require_once "util.php";
 
   $action = "";
@@ -49,7 +51,7 @@
       if(mysqli_query($conn, $sql)){
         echo "correctRelation";
       }else{
-        echo "wron rel";
+        echo "wrong rel";
       }
 
     }else{
