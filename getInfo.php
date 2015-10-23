@@ -18,7 +18,7 @@
   function getStatesFromDb(){
     $conn = connectToDataBase();
 
-    $sql = "SELECT * FROM State"
+    $sql = "SELECT * FROM State";
 
     $result = mysqli_query($conn, $sql);
 
