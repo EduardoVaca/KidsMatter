@@ -30,6 +30,7 @@
         $option += "<option value=\"" . $row["stateId"] .
                   "\">" . $row["name"] . "</option>";
       }
+      $json["data"] = $option;
     }else{
       $json["status"] = "wrong";
     }
