@@ -2,8 +2,8 @@
 <html>
     <head>
         <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="../css/style.css">
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
     </head>
@@ -13,7 +13,7 @@
 
       <div align="center" style="margin-left: 15px">
         <h4 class="white-text thin">Kids Matter</h4>
-        <img src="img/kids1.png" width="200px">
+        <img src="../img/kids1.png" width="200px">
       </div>
 
         <div class="main-wrapper">
@@ -22,7 +22,7 @@
 
                 <div class="row">
                   <div class="input-field col s7">
-                    <img src="img/child.jpg" width="200px">
+                    <img src="../img/child.jpg" width="200px">
                   </div>
                 </div>
 
@@ -56,7 +56,7 @@
 
                 <div class="row">
                   <div class="input-field col s7">
-                    <input id="nacimiento" type="text" class="validate white-text thin labelRegister">
+                    <input id="nacimiento" type="date" class="white-text thin labelRegister datepicker">
                     <label for="nacimiento" class="white-text thin labelRegister">Fecha nacimiento</label>
                   </div>
                 </div>
@@ -74,7 +74,7 @@
 
                 <div class="row">
                   <div class="input-field col s7">
-                    <input id="llegada" type="text" class="validate white-text thin labelRegister">
+                    <input id="llegada" type="date" class="white-text thin labelRegister datepicker">
                     <label for="llegada" class="white-text thin labelRegister">Fecha llegada</label>
                   </div>
                 </div>
@@ -100,8 +100,8 @@
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script>$(document).ready(function() { $('select').material_select();});</script>
-    <script type="text/javascript" src="js/insertChild.js"></script>
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/insertChild.js"></script>
+    <script type="text/javascript" src="../js/load.js"></script>
 </body>
 </html>
