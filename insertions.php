@@ -24,7 +24,7 @@
       $gender = $_POST["gender"];
       $stateId = $_POST["stateId"];
       $arrival = $_POST["arrival"];
-      insertChild($curp, $name, $birth, $gender, $stateId);
+      insertChild($curp, $name, $birth, $gender, $stateId, $arrival);
       break;
 
     default:
@@ -32,7 +32,7 @@
   }
 
 
-  function insertChild($curp, $name, $birth, $gender, $stateId){
+  function insertChild($curp, $name, $birth, $gender, $stateId, $arrival){
 
     $conn = connectToDataBase();
 
@@ -41,9 +41,17 @@
 
 
     if(mysqli_query($conn, $sql)){
-      echo "correct";
+      echo "correctChild ";
 
-      //$sql = "INSERT INTO "
+      $sql = "INSERT INTO BelongsToInstitution (CURP, institutionId, arrival) VALUES (\"" . $curp .
+              "\"," . $_SESSION["institutionId"] . ", \"" . $arrival . "\");";
+
+      if(mysqli_query($conn, $sql)){
+        echo "correctRelation";
+      }else{
+        echo "wron rel";
+      }
+
     }else{
       echo "wrong";
 
