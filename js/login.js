@@ -10,7 +10,7 @@ function isAcceptedUser(){
   var password = document.getElementById("Passwd");
   alert(username.value + password.value);
 
-  $.get("/Controladores/login.php", {
+  $.get("../Controladores/login.php", {
     action: "getUserData",
     username: username.value,
     password: password.value

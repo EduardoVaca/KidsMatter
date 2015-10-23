@@ -13,7 +13,7 @@ function insertInstitutionRequest(){
   var insPhone = document.getElementById("telefonoInstitucion");
   var insAddress = document.getElementById("direccionInstitucion");
 
-  $.post("/Controladores/insertions.php", {
+  $.post("../Controladores/insertions.php", {
           action: "insertInstitution",
           name: insName.value,
           mail: insMail.value,
