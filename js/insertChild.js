@@ -12,7 +12,7 @@ function getStates(){
   },
   function(data){
 
-    alert(data);
+    document.getElementById("debug").innerHTML = data;
   });
 }
 
