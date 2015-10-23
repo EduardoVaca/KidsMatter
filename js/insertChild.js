@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
   getStates();
 
 });
@@ -11,10 +10,8 @@ function getStates(){
         action: "getStates",
   },
   function(data){
-    var json = jQuery.parseJSON(data);
-    if(json.status == "correct"){
-      document.getElementById("estadoCombo").innerHTML = json.data;
-    }  
+     $("#estadoCombo").append(data);
+     $('#estadoCombo').material_select();
   });
 }
 
