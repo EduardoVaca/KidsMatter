@@ -45,7 +45,7 @@
                 <div class="col s12">
                     <a class="btn waves-effect waves-light right">Buscar</a>  
                 </div>
-                <div id="editable" class="input-field col s12">
+                <div class="input-field col s12">
                   <!-- parte a modificar con php -->
                   <table class="striped justified centered teal lighten-3 z-depth-1 tabla-actividades ">
                         <thead>
@@ -61,7 +61,7 @@
                                 <p>Clase</p>
                             </td>
                             <td>
-                            <button id="boletas" class="btn waves-effect waves-light center btnTabla">Ver</button>
+                            <button id="boletas" data-target="modal1" class="btn waves-effect waves-light center btnTabla modal-trigger">Ver</button>
                                 <!-- parte a modificar con php 
                             Buscar nino
                             mandar ajax rellenar tabla, sleccionar nino y hacer fade para
@@ -92,11 +92,25 @@
 
     </div>
 
+    
+    <div id="modal1" class="modal modal-fixed-footer">
+    <div id="editable" class="modal-content">
+      
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ocultar</a>
+    </div>
+    </div>
+    
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script>$(document).ready(function() { $('select').material_select();});</script>
     <script type="text/javascript" src="js/tablasBoleta.js"></script>
+    <script>$(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();});</script>
+    <script>$(document).ready(function() { $('select').material_select();});</script>
+    
     
 </body>
 </html>
