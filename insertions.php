@@ -1,12 +1,14 @@
 <?php
 
+  session_start();
+
   require_once "util.php";
 
   $action = "";
 
-  
+
   $action = $_POST['action'];
-  
+
 
   switch ($action) {
     case 'insertInstitution':
@@ -17,10 +19,47 @@
       insertInstitution($name, $email, $phone, $address);
       break;
 
+    case 'insertChild':
+      $curp = $_POST["curp"];
+      $name = $_POST["name"];
+      $birth = $_POST["birth"];
+      $gender = $_POST["gender"];
+      $stateId = $_POST["stateId"];
+      $arrival = $_POST["arrival"];
+      insertChild($curp, $name, $birth, $gender, $stateId, $arrival);
+      break;
+
     default:
       break;
   }
 
+
+  function insertChild($curp, $name, $birth, $gender, $stateId, $arrival){
+
+    $conn = connectToDataBase();
+
+    $sql = "INSERT INTO Child (CURP, name, gender, birthday, stateId) VALUES (\"" . $curp .
+                "\",\"" . $name . "\",\"" . $gender . "\",\"" . $birth . "\"," . $stateId . ");";
+
+
+    if(mysqli_query($conn, $sql)){
+      echo "correctChild ";
+
+      $sql = "INSERT INTO BelongsToInstitution (CURP, institutionId, arrival) VALUES (\"" . $curp .
+              "\"," . $_SESSION["institutionId"] . ", \"" . $arrival . "\");";
+
+      if(mysqli_query($conn, $sql)){
+        echo "correctRelation";
+      }else{
+        echo "wrong rel";
+      }
+
+    }else{
+      echo "wrong";
+
+      closeDb($conn);
+    }
+  }
 
   function insertInstitution($name, $email, $phone, $address){
 

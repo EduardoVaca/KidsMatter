@@ -19,11 +19,14 @@ function getStates(){
 }
 
 function insertChild(){
+
+  var childCURP = $('#CURP').val();
   var childName = $('#nombre').val() + " " +
             $('#apellidoPaterno').val() + " " +
             $('#apellidoMaterno').val();
 
   var childBirth = $('#nacimiento').val();
+  var childArrival = $('#llegada').val();
   var childGender;
 
   if(document.getElementById("masculino").checked){
@@ -33,8 +36,22 @@ function insertChild(){
   }
   var stateName = $('#estadoCombo option:selected').text();
   var stateId = $('#estadoCombo').val();
+  alert("stateid send: " + stateId);
 
   alert(stateName + stateId);
+  $.post("insertions.php", {
+          action: "insertChild",
+          curp: childCURP,
+          name: childName,
+          birth: childBirth,
+          gender: childGender,
+          stateId: stateId,
+          arrival: childArrival
+  }, function(data){
+    alert("regresó");
+    alert(data);
+  }
+);
 
 
 }
