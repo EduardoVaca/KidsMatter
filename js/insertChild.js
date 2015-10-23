@@ -10,7 +10,7 @@ function getStates(){
         action: "getStates",
   },
   function(data){
-     $("#estadoCombo").append(data);
+     $("#estadoComboPos").append("<select id='estadoCombo'>" + data + "</select>");
      $('#estadoCombo').material_select();
   });
 }
