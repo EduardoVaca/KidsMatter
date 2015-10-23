@@ -57,14 +57,11 @@
                             <td> Test
                             </td>
                             <td>
-                                <a class="btn-floating medium waves-effect waves-light cyan z-depth-1" href=""><i class="material-icons">add</i></a>
+                                <a class="btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
                                 <!-- parte a modificar con php 
                             Buscar nino
                             mandar ajax rellenar tabla, sleccionar nino y hacer fade para
-                            reemplazar con tabla de boleta
-
--->
-                                  
+                            reemplazar con tabla de boleta-->
                             </td>
                             <td><!-- parte a modificar con php -->
                                   
@@ -83,7 +80,7 @@
                 </div>
                 <div class="col right">
                 <br>
-                <a class="btn-floating medium waves-effect waves-light cyan z-depth-1" href=""><i class="material-icons">add</i></a>
+                
                 </div>
             </form>
 
@@ -95,9 +92,61 @@
 
     </div>
 
+    <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <table class="striped justified centered teal lighten-3 z-depth-1 tabla-actividades ">
+                        <thead>
+                          <tr>
+                              <th data-field="id" >Materia</th>
+                              <th data-field="escolaridad" >Calificación</th>
+                              
+                          </tr>
+                        </thead>
+
+                        <tbody id="boleta">
+                           <tr>
+                            <td> Test
+                            </td>
+                            <td>
+                                <div id="renglon" class="input-field col s4">
+                                    <select>
+                                      <option value="">Escolaridad</option>
+                                      <option value="1">Option 1</option>
+                                      <option value="2">Option 2</option>
+                                      <option value="3">Option 3</option>
+                                    </select>
+                                </div>
+                                <!-- parte a modificar con php 
+                            Buscar nino
+                            mandar ajax rellenar tabla, sleccionar nino y hacer fade para
+                            reemplazar con tabla de boleta-->
+                            </td>
+                            
+                          </tr>
+                          <tr>
+                            <!-- parte a modificar con php 
+                                Insertar resultados de busqueda
+                                -->
+                          </tr>
+                          <tr>
+                          </tr>
+                          
+                        </tbody>
+                  </table>
+                <a id="agregarMateria" class="btn-floating medium waves-effect waves-light cyan z-depth-1"><i class="material-icons">add</i></a>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ocultar</a>
+    </div>
+    </div>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>$(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });</script>
+    <script type="text/javascript" src="js/renglonesBoleta.js"></script>
     <script>$(document).ready(function() { $('select').material_select();});</script>
 </body>
 </html>
