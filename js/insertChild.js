@@ -19,11 +19,14 @@ function getStates(){
 }
 
 function insertChild(){
+
+  var childCURP = $('#CURP').val();
   var childName = $('#nombre').val() + " " +
             $('#apellidoPaterno').val() + " " +
             $('#apellidoMaterno').val();
 
   var childBirth = $('#nacimiento').val();
+  var childArrival = $('#llegada').val();
   var childGender;
 
   if(document.getElementById("masculino").checked){
@@ -35,6 +38,20 @@ function insertChild(){
   var stateId = $('#estadoCombo').val();
 
   alert(stateName + stateId);
+  $.post("insertions.php", {
+          action: "insertChild",
+          curp: childCURP,
+          name: childName,
+          birth: childBirth,
+          gender: childGender,
+          stateId: stateId,
+          arrival: childArrival
+  }, function(data){
+    alert("regresó");
+    var json = jQuery.parseJSON(data);
+    alert(json.child);
+  }
+);
 
 
 }

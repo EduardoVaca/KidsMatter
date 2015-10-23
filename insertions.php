@@ -4,9 +4,9 @@
 
   $action = "";
 
-  
+
   $action = $_POST['action'];
-  
+
 
   switch ($action) {
     case 'insertInstitution':
@@ -17,10 +17,39 @@
       insertInstitution($name, $email, $phone, $address);
       break;
 
+    case 'insertChild':
+      $curp = $_POST["curp"];
+      $name = $_POST["name"];
+      $birth = $_POST["birth"];
+      $gender = $_POST["gender"];
+      $stateId = $_POST["stateId"];
+      $arrival = $_POST["arrival"];
+      insertChild($name)
     default:
       break;
   }
 
+
+  function insertChild($curp, $name, $birth, $gender, $stateId){
+
+    $conn = connectToDataBase();
+
+    $sql = "INSERT INTO Child (CURP, name, gender, birthday, stateId) VALUES (\"" . $curp .
+                "\",\"" . $name . "\",\"" . $gender . "\",\"" . $birth . "\"," . $stateId . ");";
+
+    $json = array();
+
+    if(mysqli_query($conn, $sql)){
+      $json["child"] = "correct";
+
+      //$sql = "INSERT INTO "
+    }else{
+      $json["child"] = "wrong";
+
+      closeDb($conn);
+      echo json_encode($json);
+    }
+  }
 
   function insertInstitution($name, $email, $phone, $address){
 
