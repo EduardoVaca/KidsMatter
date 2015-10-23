@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   getStates();
 
 });
@@ -26,6 +27,10 @@ function insertChild(){
   }else{
     childGender = "Femenino";
   }
+  var stateName = $('#estadoCombo').text();
+  var stateId = $('#estadoCombo').val();
+
+  alert(stateName + stateId);
 
 
 }
