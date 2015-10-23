@@ -24,7 +24,9 @@
       $gender = $_POST["gender"];
       $stateId = $_POST["stateId"];
       $arrival = $_POST["arrival"];
-      insertChild($name)
+      insertChild($curp, $name, $birth, $gender, $stateId);
+      break;
+
     default:
       break;
   }
@@ -37,17 +39,15 @@
     $sql = "INSERT INTO Child (CURP, name, gender, birthday, stateId) VALUES (\"" . $curp .
                 "\",\"" . $name . "\",\"" . $gender . "\",\"" . $birth . "\"," . $stateId . ");";
 
-    $json = array();
 
     if(mysqli_query($conn, $sql)){
-      $json["child"] = "correct";
+      echo "correct";
 
       //$sql = "INSERT INTO "
     }else{
-      $json["child"] = "wrong";
+      echo "wrong";
 
       closeDb($conn);
-      echo json_encode($json);
     }
   }
 

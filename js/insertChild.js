@@ -36,6 +36,7 @@ function insertChild(){
   }
   var stateName = $('#estadoCombo option:selected').text();
   var stateId = $('#estadoCombo').val();
+  alert("stateid send: " + stateId);
 
   alert(stateName + stateId);
   $.post("insertions.php", {
@@ -48,8 +49,7 @@ function insertChild(){
           arrival: childArrival
   }, function(data){
     alert("regresó");
-    var json = jQuery.parseJSON(data);
-    alert(json.child);
+    alert(data);
   }
 );
 
