@@ -1,6 +1,6 @@
 $(document).ready(function(){
    $('#SU').click(function(){
-       $.post("MenuSU.php", function(data){
+       $.post('../Controladores/MenuSU.php', function(data){
         $('#tarjetas').append(data);
        })
    });
