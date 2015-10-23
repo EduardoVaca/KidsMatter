@@ -20,7 +20,7 @@
       break;
   }
 
-  function getChildrenTable(){
+  function getChildrenByInstitution(){
 
     $conn = connectToDataBase();
 
@@ -51,7 +51,7 @@
         }
       $table .= "</table>";
       echo $table;
-      
+
     }else{
       echo "Error";
     }
