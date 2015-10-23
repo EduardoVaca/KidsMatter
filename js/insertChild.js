@@ -2,6 +2,8 @@ $(document).ready(function(){
 
   getStates();
 
+  $("#registrar").click(insertChild);
+
 });
 
 
@@ -17,17 +19,19 @@ function getStates(){
 }
 
 function insertChild(){
-  var childName = document.getElementById("nombre").value + " " +
-            document.getElementById("apellidoPaterno").value + " " +
-            document.getElementById("apellidoMaterno").value;
-  var childBirth = document.getElementById("nacimiento").value;
+  var childName = $('#nombre').val() + " " +
+            $('#apellidoPaterno').val() + " " +
+            $('#apellidoMaterno').val();
+
+  var childBirth = $('#nacimiento').val();
   var childGender;
-  if(document.getElementById("Masculino").checked){
+
+  if(document.getElementById("masculino").checked){
     childGender = "Masculino";
   }else{
     childGender = "Femenino";
   }
-  var stateName = $('#estadoCombo').text();
+  var stateName = $('#estadoCombo option:selected').text();
   var stateId = $('#estadoCombo').val();
 
   alert(stateName + stateId);
