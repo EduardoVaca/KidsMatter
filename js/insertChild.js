@@ -9,7 +9,7 @@ $(document).ready(function(){
 
 function getStates(){
 
-  $.post("getInfo.php", {
+  $.post("/Controladores/getInfo.php", {
         action: "getStates",
   },
   function(data){
@@ -39,7 +39,7 @@ function insertChild(){
   alert("stateid send: " + stateId);
 
   alert(stateName + stateId);
-  $.post("insertions.php", {
+  $.post("/Controladores/insertions.php", {
           action: "insertChild",
           curp: childCURP,
           name: childName,

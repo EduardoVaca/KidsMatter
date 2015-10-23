@@ -10,7 +10,7 @@ function isAcceptedUser(){
   var password = document.getElementById("Passwd");
   alert(username.value + password.value);
 
-  $.get("login.php", {
+  $.get("/Controladores/login.php", {
     action: "getUserData",
     username: username.value,
     password: password.value
@@ -18,7 +18,7 @@ function isAcceptedUser(){
     alert(data);
     var object = jQuery.parseJSON(data);
     document.getElementById("debug").innerHTML = "DATA: " + object.response;
-    
+
     if(object.response == "accepted"){
       window.location.replace("Menu.html");
     }

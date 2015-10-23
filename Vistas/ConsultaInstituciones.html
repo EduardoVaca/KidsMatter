@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
+    </head>
+<body class="cyan">
+
+    <div class="container">
+
+      <div align="center" style="margin-left: 15px">
+        <h4 class="white-text thin">Kids Matter</h4>
+        <img src="img/kids1.png" width="200px">
+      </div>
+
+        <div class="main-wrapper">
+            <div class="row card-panel teal lighten-2 zdepth-3 ">
+              <form class="col s12">
+                  <div class="input-field col s12">
+                      <input id="idBusqueda" type="text" class="validate cyan-text thin labelRegister">
+                      <label for="idBusqueda" class="black-text labelRegister">Nombre</label>
+                  </div>
+                  
+                <div class="input-field col s12">
+                  <!-- parte a modificar con php -->
+                  <table class="striped justified centered teal lighten-3 z-depth-1 tabla-actividades ">
+                        <thead>
+                          <tr>
+                              <th data-field="id" >Nombre</th>
+                              <th data-field="direccion" >Dirección</th>
+                              <th data-field="telefono" >Telefono</th>
+                              
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                           <tr>
+                            <td>
+                            </td>
+                            <td><!-- parte a modificar con php 
+                            Buscar nino
+                            mandar ajax rellenar tabla, sleccionar nino y hacer fade para
+                            reemplazar con tabla de boleta
+
+-->
+                                  
+                            </td>
+                            <td><!-- parte a modificar con php -->
+                                  
+                            </td>
+                          </tr>
+                          <tr>
+                            <!-- parte a modificar con php 
+                                Insertar resultados de busqueda
+                                -->
+                          </tr>
+                          <tr>
+                          </tr>
+                          
+                        </tbody>
+                  </table>
+                </div>
+                <div class="col right">
+                <br>
+                <a class="btn-floating medium waves-effect waves-light cyan z-depth-1" href="RegistrarInstitucion.html"><i class="material-icons">add</i></a>
+                </div>
+            </form>
+
+            </div>
+            <div class="row left">
+              <a class="btn waves-effect waves-light right" href="Menu.html">Regresar</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>$(document).ready(function() { $('select').material_select();});</script>
+</body>
+</html>
