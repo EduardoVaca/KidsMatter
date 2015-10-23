@@ -49,7 +49,7 @@
 
                 <div class="row">
                   <div class="input-field col s7">
-                    <input id="nacimiento" type="date" class="validate white-text thin labelRegister">
+                    <input id="nacimiento" type="text" class="validate white-text thin labelRegister">
                     <label for="nacimiento" class="white-text thin labelRegister">Fecha nacimiento</label>
                   </div>
                 </div>
@@ -65,9 +65,13 @@
                       </p>
                 </div>
 
+                <div id="estadoComboPos" class="input-field col s12">
+                </div>
+
+
                 <div class="row">
                   <div class="input-field col s7">
-                    <input id="ingreso" type="date" class="validate white-text thin labelRegister">
+                    <input id="ingreso" type="text" class="validate white-text thin labelRegister">
                     <label for="ingreso" class="white-text thin labelRegister">Fecha de Ingreso</label>
                   </div>
                 </div>
@@ -79,16 +83,19 @@
               <a class="btn waves-effect waves-light right" href="ListaNiños.html">Regresar</a>
             </div>
             <div class="row align-center">
-                <button class="btn waves-effect waves-light right" type="submit" name="action">
+                <button class="btn waves-effect waves-light right" type="submit" name="action" id="registrar">
                 <i class="material-icons">Registrar</i>
               </button>
             </div>
         </div>
+
 
     </div>
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>$(document).ready(function() { $('select').material_select();});</script>
+    <script type="text/javascript" src="js/insertChild.js"></script>
 </body>
 </html>
