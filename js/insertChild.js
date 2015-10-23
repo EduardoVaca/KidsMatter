@@ -11,8 +11,10 @@ function getStates(){
         action: "getStates",
   },
   function(data){
-
-    document.getElementById("debug").innerHTML = data;
+    var json = jQuery.parseJSON(data);
+    if(json.status == "correct"){
+      document.getElementById("estadoCombo").innerHTML = json.data;
+    }  
   });
 }
 
