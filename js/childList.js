@@ -12,6 +12,7 @@ function getChildrenTable(){
     },
     function(data){
       alert(data);
+      $('#kids').append(data);
     }
   );
 }
