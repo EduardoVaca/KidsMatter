@@ -5,8 +5,8 @@ session_start();
 require_once "util.php";
 
 class Materia{
-  public name = "";
-  public grade = "";
+  public $name = "";
+  public $grade = "";
 }
 
 $action = "";

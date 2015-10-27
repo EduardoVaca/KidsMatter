@@ -21,6 +21,7 @@ function getLevel(){
      $('#grafica').append("<select id='nivelComboGrafica'>" + data + "</select>");
      $('#nivelComboGrafica').material_select();
      $('#grafica').append("<a id='crearGrafica' class='btn waves-effect waves-light right'><i class='material-icons'>search</i></a>");
+     $("#crearGrafica").click(createGraph);
   });
 
 }
