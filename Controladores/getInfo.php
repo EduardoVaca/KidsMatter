@@ -40,6 +40,7 @@
                   <tr>
                     <th>CURP</th>
                     <th>Nombre</th>
+                    <th>Elegir</th>
                   </tr>
                 </thead>
                 <tbody>";
@@ -49,6 +50,7 @@
           $table .= "<tr id=\"" . $row["CURP"] . "\">
                       <td>" . $row["CURP"] . "</td>
                       <td>" . $row["name"] . "</td>
+                      <td>" . "<a id='" . . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center'href='#modal1'><i class='material-icons'>done</i></a></td>
                     </tr>";
         }
       $table .= "</thead></table>";
