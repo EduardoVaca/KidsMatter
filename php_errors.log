@@ -31,3 +31,23 @@
 [25-Oct-2015 04:06:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php:0
 [25-Oct-2015 04:06:33 UTC] PHP   2. getChildrenByInstitution() /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php:15
 [25-Oct-2015 04:06:33 UTC] PHP   3. mysqli_num_rows() /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php:42
+[27-Oct-2015 03:05:14 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php on line 44
+[27-Oct-2015 03:05:14 UTC] PHP Stack trace:
+[27-Oct-2015 03:05:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php:0
+[27-Oct-2015 03:05:14 UTC] PHP   2. getChildrenTableByName() /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php:20
+[27-Oct-2015 03:05:14 UTC] PHP   3. mysqli_num_rows() /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php:44
+[27-Oct-2015 03:06:04 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php on line 44
+[27-Oct-2015 03:06:04 UTC] PHP Stack trace:
+[27-Oct-2015 03:06:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php:0
+[27-Oct-2015 03:06:04 UTC] PHP   2. getChildrenTableByName() /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php:20
+[27-Oct-2015 03:06:04 UTC] PHP   3. mysqli_num_rows() /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php:44
+[27-Oct-2015 03:07:06 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php on line 44
+[27-Oct-2015 03:07:06 UTC] PHP Stack trace:
+[27-Oct-2015 03:07:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php:0
+[27-Oct-2015 03:07:06 UTC] PHP   2. getChildrenTableByName() /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php:20
+[27-Oct-2015 03:07:06 UTC] PHP   3. mysqli_num_rows() /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php:44
+[27-Oct-2015 03:09:12 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php on line 46
+[27-Oct-2015 03:09:12 UTC] PHP Stack trace:
+[27-Oct-2015 03:09:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php:0
+[27-Oct-2015 03:09:12 UTC] PHP   2. getChildrenTableByName() /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php:20
+[27-Oct-2015 03:09:12 UTC] PHP   3. mysqli_num_rows() /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php:46

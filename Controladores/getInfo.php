@@ -31,7 +31,7 @@
 
     $sql = "SELECT * FROM Child C, BelongsToInstitution BTI " .
             "WHERE BTI.institutionId =" .  $_SESSION["institutionId"] . " AND " .
-            "C.CURP = BTI.CURP AND c.name LIKE \"" . $name . "\";";
+            "C.CURP = BTI.CURP AND C.name LIKE \"" . $name . "\";";
 
     $result = mysqli_query($conn, $sql);
 
