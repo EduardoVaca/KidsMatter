@@ -58,7 +58,7 @@
           $table .= "<tr id=\"" . $row["CURP"] . "\">
                       <td>" . $row["CURP"] . "</td>
                       <td>" . $row["name"] . "</td>
-                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center'href='#modal1'><i class='material-icons'>add</i></a></td>
+                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' href='#modal1'><i class='material-icons'>add</i></a></td>
                     </tr>";
         }
       $table .= "</thead></table>";
@@ -153,7 +153,7 @@
             $option = "";
             
             while($row = mysqli_fetch_assoc($result)){
-                $option.= "<option value=\"" . $row["gradeId"] . "\">" . row["name"] . "</option>";
+                $option.= "<option value=\"" . $row["gradeId"] . "\">" . $row["grade"] . "</option>";
             }
             $json["data"] = $option;
             echo $option;
@@ -176,7 +176,7 @@
             $option = "";
             
             while($row = mysqli_fetch_assoc($result)){
-                $option.= "<option value=\"" . $row["courseId"] . "\">" . row["name"] . "</option>";
+                $option.= "<option value=\"" . $row["courseId"] . "\">" . $row["name"] . "</option>";
             }
             $json["data"] = $option;
             echo $option;

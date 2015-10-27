@@ -1,11 +1,8 @@
 $(document).ready(function(){
-    
-    $numL=1;
+    getLevel();
+    $num=1;
     $('#agregarMateria').click(function(){
-        $('#boleta').append("<tr><td> <select id='"+$numL+"'><option value=''>Materia</option><option value='1'>Option 1</option><option value='2'>Option 2</option><option value='3'>Option 3</option></select></td><td>Test"+$numL+"</td>");
-        $str="#"+$numL;
-        $($str).material_select();
-        $numL++;
+        getCourse();
     });
 });
 
@@ -13,10 +10,29 @@ $(document).ready(function(){
 function getLevel(){
 
   $.post("../Controladores/getInfo.php", {
-        action: "get",
+        action: "getEducationLevelFromDb",
   },
   function(data){
-     $("#boleta").append("<select id='nivelCombo'>" + data + "</select>");
-     $('#boleta').material_select();
+      alert(data);
+     $('#gradoEducativo').append("<select id='nivelCombo'>" + data + "</select>");
+     $('#nivelCombo').material_select();
   });
+  
+}
+
+function getCourse(){
+
+  $.post("../Controladores/getInfo.php", {
+        action: "getCoursesFromDb",
+  },
+  function(data){
+      alert(data);
+     $('#boleta').append("<tr><td><div class='input-field col s4'><select id='courses"+$num+"'>" + data + "</select></div></td>"
+        +"<td><div class='input-field col s4'><input id='"+$num+"' type='text' class='validate'>"
+        +"<label for='"+$num+"'>Calificacion</label></div></td></tr>");
+     $str="#courses"+$num;
+     $($str).material_select();
+     $num++;
+  });
+  
 }

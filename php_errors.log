@@ -52,3 +52,5 @@
 [27-Oct-2015 03:09:12 UTC] PHP   2. getChildrenTableByName() /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php:20
 [27-Oct-2015 03:09:12 UTC] PHP   3. mysqli_num_rows() /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php:46
 [27-Oct-2015 03:36:35 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php on line 53
+[27-Oct-2015 03:56:13 UTC] PHP Parse error:  syntax error, unexpected '[' in /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php on line 156
+[27-Oct-2015 03:56:42 UTC] PHP Parse error:  syntax error, unexpected '[' in /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php on line 179

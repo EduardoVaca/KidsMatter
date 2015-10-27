@@ -53,13 +53,8 @@
       <table class="striped justified centered teal lighten-3 z-depth-1 tabla-actividades ">
           <thead>
               <tr class="center s3">
-                <th colspan="2">
-                    <select>
-                      <option value="">Grado</option>
-                      <option value="1">Option 1</option>
-                      <option value="2">Option 2</option>
-                      <option value="3">Option 3</option>
-                    </select>
+                <th colspan="2" id="gradoEducativo">
+                    
                 </th>
               </tr>
               <tr>
@@ -67,42 +62,15 @@
                   <th data-field="escolaridad" >Calificación</th>
               </tr>
             </thead>
-
             <tbody id="boleta">
-               <tr>
-                <td>
-                    <div id="renglon" class="input-field col s4">
-                        <select>
-                          <option value="">Materia</option>
-                          <option value="1">Option 1</option>
-                          <option value="2">Option 2</option>
-                          <option value="3">Option 3</option>
-                        </select>
-                    </div>
-                    <!-- parte a modificar con php
-                Buscar nino
-                mandar ajax rellenar tabla, sleccionar nino y hacer fade para
-                reemplazar con tabla de boleta-->
-                </td>
-                <td> Test
-                </td>
-
-              </tr>
-              <tr>
-                <!-- parte a modificar con php
-                    Insertar resultados de busqueda
-                    -->
-              </tr>
-              <tr>
-              </tr>
-
+              
             </tbody>
       </table>
     <a id="agregarMateria" class="btn-floating medium waves-effect waves-light cyan z-depth-1"><i class="material-icons">add</i></a>
     </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ocultar</a>
-    </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ocultar</a>
+      </div>
     </div>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -111,7 +79,7 @@
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal-trigger').leanModal();});</script>
     <script type="text/javascript" src="../js/renglonesBoleta.js"></script>
-    <script>$(document).ready(function() { $('select').material_select();});</script>
+    <script type="text/javascript" src="../js/load.js"></script>
     <script type="text/javascript" src="../js/boleta.js"></script>
 </body>
 </html>
