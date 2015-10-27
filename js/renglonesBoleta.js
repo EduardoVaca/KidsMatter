@@ -17,7 +17,7 @@ function getLevel(){
      $('#gradoEducativo').append("<select id='nivelCombo'>" + data + "</select>");
      $('#nivelCombo').material_select();
   });
-  
+
 }
 
 function getCourse(){
@@ -27,11 +27,11 @@ function getCourse(){
   },
   function(data){
       //alert(data);
-      
+
       if($num > 1){
           insertGradeInReportCard();
       }
-      
+
      $('#boleta').append("<tr><td><div class='input-field col s4'><select id='courses"+$num+"'>" + data + "</select></div></td>"
         +"<td><div class='input-field col s4'><input id='grade"+$num+"' type='text' class='validate'>"
         +"<label for='"+$num+"'>Calificacion</label></div></td></tr>");
@@ -39,7 +39,7 @@ function getCourse(){
      $($str).material_select();
      $num++;
   });
-  
+
 }
 
 
@@ -50,6 +50,16 @@ function insertGradeInReportCard(){
     var actualCourseId = $('#courses' + actualNum).val();
     var actualGradeObtained = $('#grade' + actualNum).val();
     var actualGradeLevel = $("#nivelCombo").val();
-    
+
     alert("CURP : " + actualCURP + " Grade: " + actualGradeObtained + " Val : " + actualCourseId + " Nivel " + actualGradeLevel);
+
+    $.post("../Controladores/insertions.php", {
+          action: "insertGradeCard",
+          curp: actualCURP,
+          courseId: actualCourseId,
+          gradeLevelId: actualGradeLevel,
+          gradeObtained: actualGradeObtained
+    }, function(data){
+      alert(data);
+    });
 }
