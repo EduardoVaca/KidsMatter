@@ -35,11 +35,14 @@
 
     $result = mysqli_query($conn, $sql);
 
-    $table = "<table>
-                <tr>
-                  <th>CURP</th>
-                  <th>Nombre</th>
-                </tr>";
+    $table = "<table class='striped teal lighten-3 z-depth-1 tabla-actividades'>
+                <thead>
+                  <tr>
+                    <th>CURP</th>
+                    <th>Nombre</th>
+                  </tr>
+                </thead>
+                <tbody>";
 
     if(mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_assoc($result)){
@@ -48,7 +51,7 @@
                       <td>" . $row["name"] . "</td>
                     </tr>";
         }
-      $table .= "</table>";
+      $table .= "</thead></table>";
       echo $table;
 
     }else{

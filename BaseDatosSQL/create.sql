@@ -163,6 +163,32 @@ INSERT INTO Grade VALUES(0, "1º Preparatoria");
 INSERT INTO Grade VALUES(0, "2º Preparatoria");
 INSERT INTO Grade VALUES(0, "3º Preparatoria");
 
+INSERT INTO Course VALUES(0, "Historia", NULL);
+INSERT INTO Course VALUES(0, "Espanol", NULL);
+INSERT INTO Course VALUES(0, "Ingles", NULL);
+INSERT INTO Course VALUES(0, "Matematicas", NULL);
+INSERT INTO Course VALUES(0, "Ciencias Naturales", NULL);
+INSERT INTO Course VALUES(0, "Biologia", NULL);
+INSERT INTO Course VALUES(0, "Religion", NULL);
+INSERT INTO Course VALUES(0, "Civica", NULL);
+INSERT INTO Course VALUES(0, "Etica", NULL);
+INSERT INTO Course VALUES(0, "Frances", NULL);
+INSERT INTO Course VALUES(0, "Geografia", NULL);
+INSERT INTO Course VALUES(0, "Musica", NULL);
+INSERT INTO Course VALUES(0, "Deportes", NULL);
+INSERT INTO Course VALUES(0, "Informatica", NULL);
+INSERT INTO Course VALUES(0, "Ortografia", NULL);
+INSERT INTO Course VALUES(0, "Probabilidad", NULL);
+INSERT INTO Course VALUES(0, "Literatura", NULL);
+INSERT INTO Course VALUES(0, "Ciencias Sociales", NULL);
+INSERT INTO Course VALUES(0, "Grammar", NULL);
+INSERT INTO Course VALUES(0, "Spelling", NULL);
+INSERT INTO Course VALUES(0, "General Knowledge", NULL);
+INSERT INTO Course VALUES(0, "Filosofia", NULL);
+INSERT INTO Course VALUES(0, "Derecho", NULL);
+INSERT INTO Course VALUES(0, "Administracion", NULL);
+
+
 INSERT INTO Rol VALUES(0, "Administrador", "Puede accesar a todos los datos en la base y crear usuarios nuevos asi como isntituciones nuevas");
 INSERT INTO Rol VALUES(0, "Usuario Base", "Puede accesar únicamente a los datos de su institución");
 

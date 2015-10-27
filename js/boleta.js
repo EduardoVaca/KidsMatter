@@ -15,5 +15,6 @@ function getChildByName(){
   },
   function(data){
     alert(data);
+    $('#kidsFound').append(data);
   });
 }
