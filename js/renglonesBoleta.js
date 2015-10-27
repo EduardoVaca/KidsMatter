@@ -4,6 +4,8 @@ $(document).ready(function(){
     $('#agregarMateria').click(function(){
         getCourse();
     });
+
+    $("#crearGrafica").click(createGraph);
 });
 
 
@@ -63,4 +65,20 @@ function insertGradeInReportCard(){
     }, function(data){
       alert(data);
     });
+}
+
+function createGraph(){
+  alert("creating graph");
+
+  var actualCURP = $('#secret').text();
+  var actualGradeId = $('#nivelComboGrafica').val();
+
+  $.post("../Controladores/graphs.php",{
+          action: "createGraphByGrade",
+          curp: actualCURP,
+          gradeId: actualGradeId
+  },
+  function(data){
+    alert(data);
+  });
 }
