@@ -76,8 +76,8 @@ CREATE TABLE ReportCard(
 	CURP VARCHAR(18) NOT NULL,
 	gradeId INT NOT NULL,
 	courseId INT NOT NULL,
-	dateSubmission DATE NOT NULL,
-	PRIMARY KEY(CURP, gradeId, courseId, dateSubmission),
+	gradeObtained INT NOT NULL,
+	PRIMARY KEY(CURP, gradeId, courseId),
 	FOREIGN KEY(CURP) REFERENCES Child(CURP),
 	FOREIGN KEY(gradeId) REFERENCES Grade (gradeId),
 	FOREIGN KEY(courseId) REFERENCES Course (courseId)
@@ -191,6 +191,3 @@ INSERT INTO Course VALUES(0, "Administracion", NULL);
 
 INSERT INTO Rol VALUES(0, "Administrador", "Puede accesar a todos los datos en la base y crear usuarios nuevos asi como isntituciones nuevas");
 INSERT INTO Rol VALUES(0, "Usuario Base", "Puede accesar únicamente a los datos de su institución");
-
-
-
