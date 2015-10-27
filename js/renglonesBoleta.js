@@ -84,10 +84,12 @@ function createGraph(){
     if(data != "error"){
         var json = jQuery.parseJSON(data);
         var size = json.n;
-        alert("size: " + json.n);
+
+        var cols = new Array();
         for( var i = 0; i < size; i++){
-            alert(json.materias[i].name);
+            cols.push({label: json.materias[i].name, y: json.materias[i].grade});
         }
+        alert(cols);
     }
   });
 }
