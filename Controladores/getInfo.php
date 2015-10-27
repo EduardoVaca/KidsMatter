@@ -40,7 +40,7 @@
                   <tr>
                     <th>CURP</th>
                     <th>Nombre</th>
-                    <th>Elegir</th>
+                    <th>Agregar</th>
                   </tr>
                 </thead>
                 <tbody>";
@@ -50,14 +50,14 @@
           $table .= "<tr id=\"" . $row["CURP"] . "\">
                       <td>" . $row["CURP"] . "</td>
                       <td>" . $row["name"] . "</td>
-                      <td>" . "<a id='" . . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center'href='#modal1'><i class='material-icons'>done</i></a></td>
+                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center'href='#modal1'><i class='material-icons'>add</i></a></td>
                     </tr>";
         }
       $table .= "</thead></table>";
       echo $table;
 
     }else{
-      echo "Error";
+      echo "No child found with that name";
     }
 
     closeDb($conn);
