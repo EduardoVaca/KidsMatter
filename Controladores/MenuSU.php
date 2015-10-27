@@ -5,7 +5,7 @@ echo "<div class='col s12  m12 l6'>
                             <img class='activator' src='../images/niños.jpg' style='width:100%;'>
                         </div>
                         <div class='card-content'>
-                            <span class='card-title activator grey-text text-darken-4'>Instituciones<i class='material-icons right'>more_vert</i></span>
+                            <span class='card-title activator grey-text text-darken-4'>Instituciones</span>
                         </div>
                         <div class='card-reveal'>
                             <span class='card-title grey-text text-darken-4' style='width100%;'>Instituciones<i class='material-icons right'>close</i></span>
@@ -28,7 +28,7 @@ echo "<div class='col s12  m12 l6'>
                             <img class='activator' src='../images/niños.jpg' style='width:100%;'>
                         </div>
                         <div class='card-content'>
-                            <span class='card-title activator grey-text text-darken-4'>Usuarios<i class='material-icons right'>more_vert</i></span>
+                            <span class='card-title activator grey-text text-darken-4'>Usuarios</span>
                         </div>
                         <div class='card-reveal'>
                             <span class='card-title grey-text text-darken-4' style='width100%;'>Usuarios<i class='material-icons right'>close</i></span>

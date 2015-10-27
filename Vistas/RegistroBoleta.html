@@ -15,7 +15,7 @@
 
       <div align="center" style="margin-left: 15px">
         <h4 class="white-text thin">Kids Matter</h4>
-        <img src="img/kids1.png" width="200px">
+        <img src="../img/kids1.png" width="200px">
       </div>
 
         <div class="main-wrapper">
@@ -25,28 +25,18 @@
                       <input id="idBusqueda" type="text" class="validate cyan-text thin labelRegister">
                       <label for="idBusqueda" class="black-text labelRegister">Nombre</label>
                   </div>
-                  <div class="input-field col s4">
-                    <select>
-                      <option value="">Escolaridad</option>
-                      <option value="1">Option 1</option>
-                      <option value="2">Option 2</option>
-                      <option value="3">Option 3</option>
-                    </select>
-                </div>
-                <div class="input-field col s4">
-                    <select>
-                      <option value="">Grado</option>
-                      <option value="1">Option 1</option>
-                      <option value="2">Option 2</option>
-                      <option value="3">Option 3</option>
-                    </select>
+                  
+                 
+                  <div class="col s12">
+                    <a class="btn waves-effect waves-light right">Buscar</a>
                 </div>
                 <div class="input-field col s12">
                   <!-- parte a modificar con php -->
                   <table class="striped justified centered teal lighten-3 z-depth-1 tabla-actividades ">
                         <thead>
                           <tr>
-                              <th data-field="id" >Nombre</th>
+                              <th data-field="id" >CURP</th>
+                              <th data-field="escolaridad" >Nombre</th>
                               <th data-field="escolaridad" >Agregar</th>
 
                           </tr>
@@ -56,15 +46,12 @@
                            <tr>
                             <td> Test
                             </td>
-                            <td>
-                                <a class="btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
-                                <!-- parte a modificar con php
-                            Buscar nino
-                            mandar ajax rellenar tabla, sleccionar nino y hacer fade para
-                            reemplazar con tabla de boleta-->
+                               <td> Test
                             </td>
+                               
+                            
                             <td><!-- parte a modificar con php -->
-
+                                <a class="btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center" href="#modal1"><i class="material-icons">add</i></a>
                             </td>
                           </tr>
                           <tr>
@@ -77,6 +64,7 @@
 
                         </tbody>
                   </table>
+                
                 </div>
                 <div class="col right">
                 <br>
@@ -95,45 +83,47 @@
     <div id="modal1" class="modal modal-fixed-footer">
     <div class="modal-content">
       <table class="striped justified centered teal lighten-3 z-depth-1 tabla-actividades ">
-                        <thead>
-                          <tr>
-                              <th data-field="id" >Materia</th>
-                              <th data-field="escolaridad" >Calificación</th>
+          <select>
+          </select>              
+          <thead>
+              <tr>
+                  <th data-field="id" >Materia</th>
+                  <th data-field="escolaridad" >Calificación</th>
 
-                          </tr>
-                        </thead>
+              </tr>
+            </thead>
 
-                        <tbody id="boleta">
-                           <tr>
-                            <td>
-                                <div id="renglon" class="input-field col s4">
-                                    <select>
-                                      <option value="">Materia</option>
-                                      <option value="1">Option 1</option>
-                                      <option value="2">Option 2</option>
-                                      <option value="3">Option 3</option>
-                                    </select>
-                                </div>
-                                <!-- parte a modificar con php
-                            Buscar nino
-                            mandar ajax rellenar tabla, sleccionar nino y hacer fade para
-                            reemplazar con tabla de boleta-->
-                            </td>
-                            <td> Test
-                            </td>
+            <tbody id="boleta">
+               <tr>
+                <td>
+                    <div id="renglon" class="input-field col s4">
+                        <select>
+                          <option value="">Materia</option>
+                          <option value="1">Option 1</option>
+                          <option value="2">Option 2</option>
+                          <option value="3">Option 3</option>
+                        </select>
+                    </div>
+                    <!-- parte a modificar con php
+                Buscar nino
+                mandar ajax rellenar tabla, sleccionar nino y hacer fade para
+                reemplazar con tabla de boleta-->
+                </td>
+                <td> Test
+                </td>
 
-                          </tr>
-                          <tr>
-                            <!-- parte a modificar con php
-                                Insertar resultados de busqueda
-                                -->
-                          </tr>
-                          <tr>
-                          </tr>
+              </tr>
+              <tr>
+                <!-- parte a modificar con php
+                    Insertar resultados de busqueda
+                    -->
+              </tr>
+              <tr>
+              </tr>
 
-                        </tbody>
-                  </table>
-                <a id="agregarMateria" class="btn-floating medium waves-effect waves-light cyan z-depth-1"><i class="material-icons">add</i></a>
+            </tbody>
+      </table>
+    <a id="agregarMateria" class="btn-floating medium waves-effect waves-light cyan z-depth-1"><i class="material-icons">add</i></a>
     </div>
     <div class="modal-footer">
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ocultar</a>
