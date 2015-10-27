@@ -18,44 +18,31 @@
 
         <div class="main-wrapper">
             <div class="row card-panel teal lighten-2 zdepth-3">
-              <form class="col s12">
+              <form class="col s9 center">
+                
+                
+
                 <div class="row">
                   <div class="input-field col s7">
-                    <input id="nombreInstitucion" type="text" class="validate white-text thin labelRegister">
-                    <label for="nombreInstitucion" class="white-text thin labelRegister">Institución</label>
+                    <input id="nombre" type="text" class="validate white-text thin labelRegister">
+                    <label for="nombre" class="white-text thin labelRegister">Usuario</label>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="input-field col s7">
-                    <input id="correoInstitucion" type="text" class="validate white-text thin labelRegister">
-                    <label for="correoInstitucion" class="white-text thin labelRegister">Correo</label>
+                    <input id="apellidoPaterno" type="text" class="validate white-text thin labelRegister">
+                    <label for="apellidoPaterno" class="white-text thin labelRegister">Contraseña</label>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="input-field col s7">
-                    <input id="telefonoInstitucion" type="text" class="validate white-text thin labelRegister">
-                    <label for="telefonoInstitucion" class="white-text thin labelRegister">Teléfono</label>
+                    <input id="apellidoMaterno" type="text" class="validate white-text thin labelRegister">
+                    <label for="apellidoMaterno" class="white-text thin labelRegister">Comprobacion contraseña</label>
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="input-field col s7">
-                    <input id="direccionInstitucion" type="text" class="validate white-text thin labelRegister">
-                    <label for="direccionInstitucion" class="white-text thin labelRegister">Dirección</label>
-                  </div>
-                </div>
-
-                  <div class="file-field input-field">
-                    <div class="btn">
-                      <span>Logo</span>
-                      <input type="file">
-                    </div>
-                    <div class="file-path-wrapper">
-                      <input class="file-path validate" type="text">
-                    </div>
-                  </div>
                 </form>
 
             </div>
@@ -63,18 +50,18 @@
               <a class="btn waves-effect waves-light right red accent-2" href="Menu.html">Regresar</a>
             </div>
             <div class="row align-center">
-                <button id="registrar" class="btn waves-effect waves-light right" type="submit" name="action">
+                <button class="btn waves-effect waves-light right" type="submit" name="action" id="registrar">
                 <i class="material-icons">Registrar</i>
               </button>
             </div>
         </div>
 
+
     </div>
-    <div id="debug"></div>
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
-    <script type="text/javascript" src="../js/insertInstitution.js"></script>
+    <script type="text/javascript" src="../js/load.js"></script>
 </body>
 </html>
