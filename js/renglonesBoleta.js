@@ -69,7 +69,7 @@ function insertGradeInReportCard(){
 }
 
 function createGraph(){
-  alert("creating graph");
+
 
   var actualCURP = $('#secret').text();
   var actualGradeId = $('#nivelComboGrafica').val();
@@ -80,16 +80,28 @@ function createGraph(){
           gradeId: actualGradeId
   },
   function(data){
-    alert(data);
+
     if(data != "error"){
         var json = jQuery.parseJSON(data);
         var size = json.n;
 
         var cols = new Array();
         for( var i = 0; i < size; i++){
-            cols.push({label: json.materias[i].name, y: json.materias[i].grade});
+            cols.push({label: json.materias[i].name, y: parseInt(json.materias[i].grade)});
         }
-        alert(cols);
+
+        var info = {
+          data: [
+              {
+                  type: "column",
+                  dataPoints: cols,
+              }
+              ]
+        };
+
+        $('#grafica').CanvasJSChart(info);
+    }else{
+        alert(data);
     }
   });
 }

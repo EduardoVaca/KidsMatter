@@ -20,6 +20,6 @@ function getChildByName(){
 }
 
 function printId(myId){
-  alert("id: " + myId);
+
   $('#secret').html(myId);
 }
