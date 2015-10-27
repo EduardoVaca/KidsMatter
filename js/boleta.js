@@ -14,8 +14,12 @@ function getChildByName(){
       nombreChild: "%" + nombre + "%"
   },
   function(data){
-    alert(data);
     $('#kidsFound').html(data);
     $('.modal-trigger').leanModal();
   });
+}
+
+function printId(myId){
+  alert("id: " + myId);
+  $('#secret').html(myId);
 }
