@@ -15,9 +15,47 @@
       getChildrenByInstitution();
       break;
 
+    case 'getChildrenTableByName':
+      $name = $_POST["nombreChild"];
+      getChildrenTableByName($name);
+      break;
+
     default:
       # code...
       break;
+  }
+
+  function getChildrenTableByName($name){
+
+    $conn = connectToDataBase();
+
+    $sql = "SELECT * FROM Child C, BelongsToInstitution BTI " .
+            "WHERE BTI.institutionId =" .  $_SESSION["institutionId"] . " AND " .
+            "C.CURP = BTI.CURP AND c.name LIKE \"" . $name . "\";";
+
+    $result = mysqli_query($conn, $sql);
+
+    $table = "<table>
+                <tr>
+                  <th>CURP</th>
+                  <th>Nombre</th>
+                </tr>";
+
+    if(mysqli_num_rows($result) > 0){
+        while($row = mysqli_fetch_assoc($result)){
+          $table .= "<tr id=\"" . $row["CURP"] . "\">
+                      <td>" . $row["CURP"] . "</td>
+                      <td>" . $row["name"] . "</td>
+                    </tr>";
+        }
+      $table .= "</table>";
+      echo $table;
+
+    }else{
+      echo "Error";
+    }
+
+    closeDb($conn);
   }
 
   function getChildrenByInstitution(){
