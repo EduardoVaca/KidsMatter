@@ -25,10 +25,10 @@
                       <input id="nombreBusqueda" type="text" class="validate cyan-text thin labelRegister">
                       <label for="nombreBusqueda" class="black-text labelRegister">Nombre</label>
                   </div>
-                  
-                 
+
+
                   <div class="col s12">
-                    <a class="btn waves-effect waves-light right">Buscar</a>
+                    <a id="buscar" class="btn waves-effect waves-light right">Buscar</a>
                 </div>
                 <div class="input-field col s12">
                   <!-- parte a modificar con php -->
@@ -48,8 +48,8 @@
                             </td>
                                <td> Test
                             </td>
-                               
-                            
+
+
                             <td><!-- parte a modificar con php -->
                                 <a class="btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center" href="#modal1"><i class="material-icons">add</i></a>
                             </td>
@@ -64,7 +64,7 @@
 
                         </tbody>
                   </table>
-                
+
                 </div>
                 <div class="col right">
                 <br>
@@ -84,7 +84,7 @@
     <div class="modal-content">
       <table class="striped justified centered teal lighten-3 z-depth-1 tabla-actividades ">
           <select>
-          </select>              
+          </select>
           <thead>
               <tr>
                   <th data-field="id" >Materia</th>
@@ -137,5 +137,6 @@
     $('.modal-trigger').leanModal();});</script>
     <script type="text/javascript" src="../js/renglonesBoleta.js"></script>
     <script>$(document).ready(function() { $('select').material_select();});</script>
+    <script type="text/javascript" src="../js/boletajs"></script>
 </body>
 </html>
