@@ -29,10 +29,33 @@
       insertChild($curp, $name, $birth, $gender, $stateId, $arrival);
       break;
 
+    case 'insertGradeCard':
+      $curp = $_POST["curp"];
+      $courseId = $_POST["courseId"];
+      $gradeId = $_POST["gradeLevelId"];
+      $gradeObtained = $_POST["gradeObtained"];
+      insertInReportCard($curp, $courseId, $gradeId, $gradeObtained);
+      break;
+
     default:
       break;
   }
 
+
+  function insertInReportCard($curp, $courseId, $gradeId, $gradeObtained){
+
+    $conn = connectToDataBase();
+
+    $sql = "INSERT INTO ReportCard (CURP, gradeId, courseId, gradeObtained) VALUES (\"" . $curp .
+          "\"," . $gradeId . "," . $courseId . "," . $gradeObtained . ");";
+
+    if(mysqli_query($conn, $sql)){
+      echo "Insertion Done!";
+    }else{
+      echo "Error in Insertion";
+    }
+    closeDb($conn);
+  }
 
   function insertChild($curp, $name, $birth, $gender, $stateId, $arrival){
 
