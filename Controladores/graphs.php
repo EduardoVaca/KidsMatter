@@ -43,9 +43,12 @@ function getGraphByGrade($curp, $gradeId){
         $materia->name = $row["name"];
         $materia->grade = $row["gradeObtained"];
 
-        $courses.append($materia);
+        array_push($courses, $materia);
       }
-      echo json_encode($courses);
+      $res = array();
+      $res["n"] = count($courses);
+      $res["materias"] = $courses;
+     echo json_encode($res);
 
   }else{
 

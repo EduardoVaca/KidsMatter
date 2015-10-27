@@ -81,5 +81,13 @@ function createGraph(){
   },
   function(data){
     alert(data);
+    if(data != "error"){
+        var json = jQuery.parseJSON(data);
+        var size = json.n;
+        alert("size: " + json.n);
+        for( var i = 0; i < size; i++){
+            alert(json.materias[i].name);
+        }
+    }
   });
 }
