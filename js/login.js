@@ -1,27 +1,42 @@
 $(document).ready(function(){
-
-  $('#ingresar').click(isAcceptedUser)
+  $('#errorImage').hide();
+  $('#ingresar').click(isAcceptedUser);
 
 });
 
+function validate(){
+  if ($('#User').val().length > 0 && $('#Passwd').val().length > 0){
+    return true;
+  }
+  return false;
+}
+
 function isAcceptedUser(){
 
-  var username = document.getElementById("User");
-  var password = document.getElementById("Passwd");
-  alert(username.value + password.value);
+  if (validate()){
 
-  $.get("../Controladores/login.php", {
-    action: "getUserData",
-    username: username.value,
-    password: password.value
-  }, function(data){
-    alert(data);
-    var object = jQuery.parseJSON(data);
-    document.getElementById("debug").innerHTML = "DATA: " + object.response;
+    var username = document.getElementById("User");
+    var password = document.getElementById("Passwd");
 
-    if(object.response == "accepted"){
-      window.location.replace("Menu.html");
-    }
-  });
+    $.get("../Controladores/login.php", {
+      action: "getUserData",
+      username: username.value,
+      password: password.value
+    }, function(data){
+      alert(data);
+      var object = jQuery.parseJSON(data);
+
+      if(object.response == "accepted"){
+        window.location.replace("Menu.html");
+      }else{
+        //Put image
+      }
+    });
+
+  }else{
+
+    alert("Favor de escribir usuario y contraseña");
+  }
+
 
 }
