@@ -23,13 +23,14 @@ function isAcceptedUser(){
       username: username.value,
       password: password.value
     }, function(data){
-      alert(data);
+
       var object = jQuery.parseJSON(data);
 
       if(object.response == "accepted"){
         window.location.replace("Menu.html");
       }else{
-        //Put image
+        $('#errorImage').show();
+        $('#errorMessage').show();
       }
     });
 
