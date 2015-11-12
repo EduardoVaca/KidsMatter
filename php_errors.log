@@ -54,3 +54,8 @@
 [27-Oct-2015 03:36:35 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php on line 53
 [27-Oct-2015 03:56:13 UTC] PHP Parse error:  syntax error, unexpected '[' in /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php on line 156
 [27-Oct-2015 03:56:42 UTC] PHP Parse error:  syntax error, unexpected '[' in /home/ubuntu/workspace/KidsMatter/Controladores/getInfo.php on line 179
+[12-Nov-2015 01:04:32 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/KidsMatter/Controladores/login.php on line 30
+[12-Nov-2015 01:04:32 UTC] PHP Stack trace:
+[12-Nov-2015 01:04:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/KidsMatter/Controladores/login.php:0
+[12-Nov-2015 01:04:32 UTC] PHP   2. validateUser() /home/ubuntu/workspace/KidsMatter/Controladores/login.php:11
+[12-Nov-2015 01:04:32 UTC] PHP   3. mysqli_num_rows() /home/ubuntu/workspace/KidsMatter/Controladores/login.php:30
