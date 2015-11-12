@@ -34,7 +34,7 @@ echo "<div class='col s12  m12 l6'>
                             <span class='card-title grey-text text-darken-4' style='width100%;'>Usuarios<i class='material-icons right'>close</i></span>
                                 <div class='opciones-menu'>
                                     <i class='material-icons center medium' >description</i>
-                                    <a class='btn waves-effect waves-light circle' type='submit' name='action'  href='RegistroBoleta.html'>Registro</a>
+                                    <a class='btn waves-effect waves-light circle' type='submit' name='action'  href='RegistroUsuario.html'>Registro</a>
                                 </div>
                                 <br>
                                 <div class='opciones-menu'>
