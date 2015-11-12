@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 if($_SESSION["rolId"] == 1){
   echo "<div class='col s12  m12 l6'>
                       <div class='card center medium'>
