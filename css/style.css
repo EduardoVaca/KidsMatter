@@ -54,3 +54,9 @@ body, html
     font-size: 14px;
 }
 
+
+#errorMessage{
+    color: #BB0000;
+    font-family: 'consolas';
+    hidden: true;
+}
