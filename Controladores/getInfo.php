@@ -15,6 +15,10 @@
       getInstitutionsFromDb();
       break;
 
+    case 'getRoles':
+      getRolesFromDb();
+      break;
+
     case 'getChildrenTable':
       getChildrenByInstitution();
       break;
@@ -163,6 +167,33 @@
         $option = "";
         while($row = mysqli_fetch_assoc($result)){
           $option .= "<option value=\"" . $row["institutionId"] .
+                    "\">" . $row["name"] . "</option>";
+        }
+        $json["data"] = $option;
+        echo $option;
+      }else{
+        $json["status"] = "wrong";
+      }
+
+      closeDb($conn);
+    }
+
+
+    function getRolesFromDb(){
+      $conn = connectToDataBase();
+
+      $sql = "SELECT * FROM Rol";
+
+      $result = mysqli_query($conn, $sql);
+
+
+      $json = array();
+      if(mysqli_num_rows($result) > 0){
+        $json["status"] = "correct";
+        $json["num"] = mysqli_num_rows($result);
+        $option = "";
+        while($row = mysqli_fetch_assoc($result)){
+          $option .= "<option value=\"" . $row["rolId"] .
                     "\">" . $row["name"] . "</option>";
         }
         $json["data"] = $option;
