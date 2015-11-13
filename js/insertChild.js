@@ -74,7 +74,6 @@ function insertChild(){
           stateId: stateId,
           arrival: childArrival
   }, function(data){
-    alert("regresóinsert ");
     alert(data);
   }
 );

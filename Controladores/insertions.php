@@ -37,8 +37,40 @@
       insertInReportCard($curp, $courseId, $gradeId, $gradeObtained);
       break;
 
+    case 'insertUser':
+      $username = $_POST["user"];
+      $password = $_POST["password"];
+      $institutionId = $_POST["instId"];
+      $rolId = $_POST["roleId"];
+      insertUser($username, $password, $institutionId, $rolId);
+      break;
+
     default:
       break;
+  }
+
+  function insertUser($username, $password, $institutionId, $rolId){
+
+    $conn = connectToDataBase();
+
+    $sql = "INSERT INTO User (userName, userPassword) VALUES (\"" . $username .
+            "\",\"" . $password . "\");";
+
+    if(mysqli_query($conn, $sql)){
+      echo "Insertion user done";
+      $sql = "INSERT INTO WorksInInstitution (userName, institutionId) VALUES (\"" . $username .
+      "\"," . $institutionId . ");";
+      if(mysqli_query($conn, $sql)){
+        echo "Insertion workin done";
+        $sql = "INSERT INTO HasRole (userName, rolId) VALUES (\"" . $username . "\"," . $rolId . ");";
+        if(mysqli_query($conn, $sql)){
+          echo "insetion role done";
+        }
+      }
+    }else{
+      echo "Error in Insertion";
+    }
+    closeDb($conn);
   }
 
 
