@@ -42,7 +42,7 @@
       $password = $_POST["password"];
       $institutionId = $_POST["instId"];
       $rolId = $_POST["roleId"];
-      insertUserInDb($username, $password, $institutionId, $rolId);
+      insertUser($username, $password, $institutionId, $rolId);
       break;
 
     default:
@@ -54,7 +54,7 @@
     $conn = connectToDataBase();
 
     $sql = "INSERT INTO User (userName, userPassword) VALUES (\"" . $username .
-            "\",\"" . $userPassword . "\");";
+            "\",\"" . $password . "\");";
 
     if(mysqli_query($conn, $sql)){
       echo "Insertion user done";
@@ -64,7 +64,7 @@
         echo "Insertion workin done";
         $sql = "INSERT INTO HasRole (userName, rolId) VALUES (\"" . $username . "\"," . $rolId . ");";
         if(mysqli_query($conn, $sql)){
-          echo "insetion role done";          
+          echo "insetion role done";
         }
       }
     }else{
