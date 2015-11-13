@@ -11,6 +11,10 @@
       getStatesFromDb();
       break;
 
+    case 'getInstitutions':
+      getInstitutionsFromDb();
+      break;
+
     case 'getChildrenTable':
       getChildrenByInstitution();
       break;
@@ -19,11 +23,11 @@
       $name = $_POST["nombreChild"];
       getChildrenTableByName($name);
       break;
-    
+
     case 'getEducationLevelFromDb':
       getEducationLevelFromDb();
       break;
-    
+
     case 'getCoursesFromDb':
       getCoursesFromDb();
       break;
@@ -143,17 +147,43 @@
 
   }
 
+    function getInstitutionsFromDb(){
+
+      $conn = connectToDataBase();
+
+      $sql = "SELECT * FROM Institution";
+
+      $result = mysqli_query($conn, $sql);
+
+      $json = array();
+      if(mysqli_num_rows($result) > 0){
+        $json["status"] = "correct";
+        $json["num"] = mysqli_num_rows($result);
+        $option = "";
+        while($row = mysqli_fetch_assoc($result)){
+          $option .= "<option value=\"" . $row["institutionId"] .
+                    "\">" . $row["name"] . "</option>";
+        }
+        $json["data"] = $option;
+        echo $option;
+      }else{
+        $json["status"] = "wrong";
+      }
+
+      closeDb($conn);
+    }
+
     function getEducationLevelFromDb(){
         $conn = connectToDatabase();
         $sql = "SELECT * FROM Grade";
         $result = mysqli_query($conn, $sql);
         $json = array();
-        
+
         if(mysqli_num_rows($result) > 0){
             $json["status"] = "correct";
             $json["num"] = mysqli_num_rows($result);
             $option = "";
-            
+
             while($row = mysqli_fetch_assoc($result)){
                 $option.= "<option value=\"" . $row["gradeId"] . "\">" . $row["grade"] . "</option>";
             }
@@ -162,7 +192,7 @@
         } else {
             $json["status"] = "wrong";
         }
-        
+
         closeDb($conn);
     }
 
@@ -171,12 +201,12 @@
         $sql = "SELECT * FROM Course";
         $result = mysqli_query($conn, $sql);
         $json = array();
-        
+
         if(mysqli_num_rows($result) > 0){
             $json["status"] = "correct";
             $json["num"] = mysqli_num_rows($result);
             $option = "";
-            
+
             while($row = mysqli_fetch_assoc($result)){
                 $option.= "<option value=\"" . $row["courseId"] . "\">" . $row["name"] . "</option>";
             }
@@ -185,7 +215,7 @@
         } else {
             $json["status"] = "wrong";
         }
-        
+
         closeDb($conn);
     }
 
