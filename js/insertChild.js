@@ -1,8 +1,7 @@
 $(document).ready(function(){
 
   getStates();
-
-  $("#registrar").click(insertChild);
+  $("#registrar").click(validaciones());
 
 });
 
@@ -16,6 +15,33 @@ function getStates(){
      $("#estadoComboPos").append("<select id='estadoCombo'>" + data + "</select>");
      $('#estadoCombo').material_select();
   });
+}
+
+function validaciones(){
+  var childCURP = $('#CURP').val();
+  var childName = $('#nombre').val();
+  var childlast1 = $('#apellidoPaterno').val();
+  var childlast2 = $('#apellidoMaterno').val();
+
+  var childBirth = $('#nacimiento').val();
+  var childArrival = $('#llegada').val();
+
+  $.post("../Controladores/validate.php", {
+          action: "valida",
+          curp: childCURP,
+          name: childName,
+          last1: childlast1,
+          last2: childlast2,
+          birth: childBirth,
+          arrival: childArrival
+  }, function(data){
+    alert("regresóval ");
+    alert(data);
+    if(data==0){
+      insertChild();
+    }
+  });
+
 }
 
 function insertChild(){
@@ -48,7 +74,7 @@ function insertChild(){
           stateId: stateId,
           arrival: childArrival
   }, function(data){
-    alert("regresó");
+    alert("regresóinsert ");
     alert(data);
   }
 );
