@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('#errorImage').hide();
+
   $('#ingresar').click(isAcceptedUser);
 
 });
@@ -27,10 +27,12 @@ function isAcceptedUser(){
       var object = jQuery.parseJSON(data);
 
       if(object.response == "accepted"){
+        $('#errorImage').hide();
+        $('#successImage').show();
         window.location.replace("Menu.html");
       }else{
         $('#errorImage').show();
-        $('#errorMessage').show();
+        $('#successImage').hide();
       }
     });
 
