@@ -57,13 +57,15 @@ function insertUserInDb(){
 
 function success(){
   $('#successImage').show();
-  $('#nombre').val() = "";
-  $('#password1').val() = "";
-  $('#password2').val() = "";
+  $('#errorImage').hide();
+  $('#nombre').val("");
+  $('#password1').val("");
+  $('#password2').val("");
 }
 
 function failed(){
   $('#errorImage').show();
+  $('#successImage').hide();
   $('#nombre').val() = "";
   $('#password1').val() = "";
   $('#password2').val() = "";
