@@ -35,7 +35,6 @@ function insertUserInDb(){
     var institutionId = $('#institutionCombo').val();
     var rolId = $('#rolesCombo').val();
 
-    alert("instId" + institutionId + " rolId:" + rolId + " pASS: " + passwordUser);
     $.post("../Controladores/insertions.php", {
       action: "insertUser",
       user: userName,
