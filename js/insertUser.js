@@ -45,6 +45,8 @@ function insertUserInDb(){
     }, function(data){
       if(data == "1"){
         success();
+      }else{
+        failed();
       }
     });
   }else{
