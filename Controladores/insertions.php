@@ -126,13 +126,9 @@
 				$email . "\", \"" . $phone . "\", \"" . $address . "\");";
 
 		if (mysqli_query($conn, $sql)) {
-		    echo "New record created successfully";
-		    closeDb($conn);
-		    return true;
+		    echo "1";
 		} else {
-		    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-		    closeDb($conn);
-		    return false;
+		    echo "0";
 		}
 
 		closeDb($conn);
