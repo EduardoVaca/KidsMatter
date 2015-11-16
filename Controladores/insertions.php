@@ -57,18 +57,20 @@
             "\",\"" . $password . "\");";
 
     if(mysqli_query($conn, $sql)){
-      echo "Insertion user done";
       $sql = "INSERT INTO WorksInInstitution (userName, institutionId) VALUES (\"" . $username .
       "\"," . $institutionId . ");";
       if(mysqli_query($conn, $sql)){
-        echo "Insertion workin done";
         $sql = "INSERT INTO HasRole (userName, rolId) VALUES (\"" . $username . "\"," . $rolId . ");";
         if(mysqli_query($conn, $sql)){
-          echo "insetion role done";
+          echo "1";
+        }else{
+          echo "0";
         }
+      }else{
+        echo "0";
       }
     }else{
-      echo "Error in Insertion";
+      echo "0";
     }
     closeDb($conn);
   }

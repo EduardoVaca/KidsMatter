@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+  $('#successImage').hide();
+  $('#errorImage').hide();
   getInstitutions();
   getRoles();
   $('#registrar').click(function(){
@@ -9,11 +11,11 @@ $(document).ready(function(){
 
 function validate(){
 
-  if($('#nombre').val().length < 0){
+  if($('#nombre').val().length == 0){
     return false;
   }
 
-  if($('#password1').val().length < 0){
+  if($('#password1').val().length == 0){
     return false;
   }
 
@@ -41,12 +43,32 @@ function insertUserInDb(){
       instId: institutionId,
       roleId: rolId
     }, function(data){
-      alert(data);
+      if(data == "1"){
+        success();
+      }else{
+        failed();
+      }
     });
   }else{
     alert("Fields are NOT validate");
   }
 
+}
+
+function success(){
+  $('#successImage').show();
+  $('#errorImage').hide();
+  $('#nombre').val("");
+  $('#password1').val("");
+  $('#password2').val("");
+}
+
+function failed(){
+  $('#errorImage').show();
+  $('#successImage').hide();
+  $('#nombre').val() = "";
+  $('#password1').val() = "";
+  $('#password2').val() = "";
 }
 
 function getInstitutions(){
