@@ -19,6 +19,10 @@
       getRolesFromDb();
       break;
 
+    case 'getInstitutionsTable':
+      getInstitutionsTable();
+      break;
+
     case 'getChildrenTable':
       if($_SESSION["rolId"] == 1){
         getChildren();
@@ -173,13 +177,51 @@
 
   }
 
+  function getInstitutionsTable(){
+
+        $conn = connectToDataBase();
+
+        $sql = "SELECT * FROM Institution";
+
+        $result = mysqli_query($conn, $sql);
+
+        $table = "<table class='striped teal lighten-3 z-depth-1 tabla-actividades'>
+                    <thead>
+                      <tr>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Eliminar</th>
+                      </tr>
+                    </thead>
+                    <tbody>";
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+              $table .= "<tr id=\"" . $row["institutionId"] . "\">
+                          <td>" . $row["name"] . "</td>
+                          <td>" . $row["email"] . "</td>
+                          <td>" . $row["phone"] . "</td>
+                          <td>" . "<a id='" . $row["institutionId"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
+                        </tr>";
+            }
+          $table .= "</tbody></table>";
+          echo $table;
+
+        }else{
+          echo "Error";
+        }
+
+        closeDb($conn);
+  }
+
   function getChildren(){
 
     $conn = connectToDataBase();
 
-    $sql = "SELECT C.CURP, C.name as cName, gender, birthday, arrival, I.name as iName 
+    $sql = "SELECT C.CURP, C.name as cName, gender, birthday, arrival, I.name as iName
             FROM Child C, BelongsToInstitution BTI, Institution I
-             WHERE C.CURP = BTI.CURP AND I.institutionId = BTI.institutionId 
+             WHERE C.CURP = BTI.CURP AND I.institutionId = BTI.institutionId
              ORDER BY iName;";
 
     $result = mysqli_query($conn, $sql);
