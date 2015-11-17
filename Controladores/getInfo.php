@@ -65,6 +65,7 @@
                     <th>Nombre</th>
                     <th>Agregar</th>
                     <th>Ver</th>
+                    <th>Eliminar</th>
                   </tr>
                 </thead>
                 <tbody>";
@@ -76,6 +77,7 @@
                       <td>" . $row["name"] . "</td>
                       <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal1'><i class='material-icons'>add</i></a></td>
                       <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal2'><i class='material-icons'>search</i></a></td>
+                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
                     </tr>";
         }
       $table .= "</thead></table>";
@@ -175,7 +177,10 @@
 
     $conn = connectToDataBase();
 
-    $sql = "SELECT * FROM Child C, BelongsToInstitution BTI" . " WHERE C.CURP = BTI.CURP;";
+    $sql = "SELECT C.CURP, C.name as cName, gender, birthday, arrival, I.name as iName 
+            FROM Child C, BelongsToInstitution BTI, Institution I
+             WHERE C.CURP = BTI.CURP AND I.institutionId = BTI.institutionId 
+             ORDER BY iName;";
 
     $result = mysqli_query($conn, $sql);
 
@@ -187,6 +192,8 @@
                     <th>Sexo</th>
                     <th>Cumpleanos</th>
                     <th>Llegada</th>
+                    <th>Institucion<th>
+                    <th>Eliminar</th>
                   </tr>
                 </thead>
                 <tbody>";
@@ -195,10 +202,12 @@
         while($row = mysqli_fetch_assoc($result)){
           $table .= "<tr id=\"" . $row["CURP"] . "\">
                       <td>" . $row["CURP"] . "</td>
-                      <td>" . $row["name"] . "</td>
+                      <td>" . $row["cName"] . "</td>
                       <td>" . $row["gender"] . "</td>
                       <td>" . $row["birthday"] . "</td>
                       <td>" . $row["arrival"] . "</td>
+                      <td>" . $row["iName"] . "<td>
+                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
                     </tr>";
         }
       $table .= "</tbody></table>";

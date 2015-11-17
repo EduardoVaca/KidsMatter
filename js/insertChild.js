@@ -1,7 +1,9 @@
 $(document).ready(function(){
 
   getStates();
-  $("#registrar").click(validaciones());
+  $("#registrar").click(function(){
+    validaciones();
+  });
 
 });
 
@@ -45,8 +47,8 @@ function validaciones(){
 }
 
 function insertChild(){
-
-  var childCURP = $('#CURP').val();
+    alert("hola");
+/*  var childCURP = $('#CURP').val();
   var childName = $('#nombre').val() + " " +
             $('#apellidoPaterno').val() + " " +
             $('#apellidoMaterno').val();
@@ -76,7 +78,7 @@ function insertChild(){
   }, function(data){
     alert(data);
   }
-);
+);*/
 
 
 }
