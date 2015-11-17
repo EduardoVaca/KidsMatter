@@ -1,7 +1,5 @@
 $(document).ready(function(){
-  alert("In child js");
   getChildrenTable();
-
 });
 
 function getChildrenTable(){
@@ -11,7 +9,6 @@ function getChildrenTable(){
       action: "getChildrenTable"
     },
     function(data){
-      alert(data);
       $('#kids').append(data);
     }
   );
