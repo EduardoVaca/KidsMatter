@@ -53,8 +53,8 @@
 
     $conn = connectToDataBase();
 
-    $sql = "SELECT * FROM Child C, " .
-            "WHERE C.name LIKE \"" . $name . "\";";
+    $sql = "SELECT * FROM Child " .
+            "WHERE name LIKE \"" . $name . "\";";
 
     $result = mysqli_query($conn, $sql);
 
@@ -175,7 +175,7 @@
 
     $conn = connectToDataBase();
 
-    $sql = "SELECT * FROM Child;";
+    $sql = "SELECT * FROM Child C, BelongsToInstitution BTI" . " WHERE C.CURP = BTI.CURP;";
 
     $result = mysqli_query($conn, $sql);
 
