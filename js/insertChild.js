@@ -71,9 +71,7 @@ function insertChild(){
   }
   var stateName = $('#estadoCombo option:selected').text();
   var stateId = $('#estadoCombo').val();
-  alert("stateid send: " + stateId);
 
-  alert(stateName + stateId);
   $.post("../Controladores/insertions.php", {
           action: "insertChild",
           curp: childCURP,
