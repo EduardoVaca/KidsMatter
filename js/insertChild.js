@@ -2,7 +2,12 @@ $(document).ready(function(){
 
   getStates();
   $("#registrar").click(function(){
-    validaciones();
+    if(allFieldsFilled()){
+      validaciones();
+    }else{
+      failed();
+      alert("Campos incorrectos");
+    }
   });
 
 });
@@ -37,18 +42,20 @@ function validaciones(){
           birth: childBirth,
           arrival: childArrival
   }, function(data){
-    alert("regresóval ");
-    alert(data);
     if(data==0){
       insertChild();
+    }else{
+      //error inserting
+      failed();
+      alert("Campos incorrectos");
     }
   });
 
 }
 
 function insertChild(){
-    alert("hola");
-/*  var childCURP = $('#CURP').val();
+
+  var childCURP = $('#CURP').val();
   var childName = $('#nombre').val() + " " +
             $('#apellidoPaterno').val() + " " +
             $('#apellidoMaterno').val();
@@ -64,9 +71,7 @@ function insertChild(){
   }
   var stateName = $('#estadoCombo option:selected').text();
   var stateId = $('#estadoCombo').val();
-  alert("stateid send: " + stateId);
 
-  alert(stateName + stateId);
   $.post("../Controladores/insertions.php", {
           action: "insertChild",
           curp: childCURP,
@@ -76,9 +81,44 @@ function insertChild(){
           stateId: stateId,
           arrival: childArrival
   }, function(data){
-    alert(data);
+    if(data == "1"){
+      success();
+    }else{
+      failed();
+    }
   }
-);*/
+);
+}
 
+function allFieldsFilled(){
+  if($('#nombre').val().length == 0){
+    return false;
+  }
+  if($('#CURP').val().length != 18){
+    return false;
+  }
+  if($('#apellidoPaterno').val().length == 0){
+    return false;
+  }
+  if($('#nacimiento').val().length == 0){
+    return false;
+  }
+  if($('#llegada').val().length == 0){
+    return false;
+  }
+  return true;
+}
 
+function success(){
+  $('#successImage').show();
+  $('#errorImage').hide();
+  $('#CURP').val("");
+  $('#nombre').val("");
+  $('#apellidoPaterno').val("");
+  $('#apellidoMaterno').val("");
+}
+
+function failed(){
+  $('#errorImage').show();
+  $('#successImage').hide();
 }
