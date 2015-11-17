@@ -23,6 +23,10 @@
       getInstitutionsTable();
       break;
 
+    case 'getUsersTable':
+      getUsersTable();
+      break;
+
     case 'getChildrenTable':
       if($_SESSION["rolId"] == 1){
         getChildren();
@@ -175,6 +179,47 @@
 
     closeDb($conn);
 
+  }
+
+  function getUsersTable(){
+
+    $conn = connectToDataBase();
+
+    $sql = "SELECT" . " U.userName as uName, I.name as iName, R.name as rName
+          FROM User U, HasRole HR, Rol R, WorksInInstitution WII, Institution I
+          WHERE U.userName = HR.userName AND R.rolId = HR.rolId AND U.userName = WII.userName
+          AND WII.institutionId = I.institutionId";
+
+    $result = mysqli_query($conn, $sql);
+
+    $table = "<table class='striped teal lighten-3 z-depth-1 tabla-actividades'>
+                <thead>
+                  <tr>
+                    <th>Usuario</th>
+                    <th>Institucion</th>
+                    <th>Rol</th>
+                    <th>Eliminar</th>
+                  </tr>
+                </thead>
+                <tbody>";
+
+    if(mysqli_num_rows($result) > 0){
+        while($row = mysqli_fetch_assoc($result)){
+          $table .= "<tr id=\"" . $row["uName"] . "\">
+                      <td>" . $row["uName"] . "</td>
+                      <td>" . $row["iName"] . "</td>
+                      <td>" . $row["rName"] . "</td>
+                      <td>" . "<a id='" . $row["uName"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
+                    </tr>";
+        }
+      $table .= "</tbody></table>";
+      echo $table;
+
+    }else{
+      echo "Error";
+    }
+
+    closeDb($conn);
   }
 
   function getInstitutionsTable(){

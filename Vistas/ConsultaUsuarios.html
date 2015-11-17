@@ -20,56 +20,9 @@
 
         <div class="main-wrapper">
             <div class="row card-panel teal lighten-2 zdepth-3 ">
-              <form class="col s12">
-                  <div class="input-field col s12">
-                      <input id="idBusqueda" type="text" class="validate cyan-text thin labelRegister">
-                      <label for="idBusqueda" class="black-text labelRegister">Nombre</label>
-                  </div>
+              <div id="users" class="col s12">
 
-                <div class="input-field col s12">
-                  <!-- parte a modificar con php -->
-                  <table class="striped justified centered teal lighten-3 z-depth-1 tabla-actividades ">
-                        <thead>
-                          <tr>
-                              <th data-field="id" >Nombre</th>
-                              <th data-field="direccion" >Dirección</th>
-                              <th data-field="telefono" >Telefono</th>
-
-                          </tr>
-                        </thead>
-
-                        <tbody>
-                           <tr>
-                            <td>
-                            </td>
-                            <td><!-- parte a modificar con php
-                            Buscar nino
-                            mandar ajax rellenar tabla, sleccionar nino y hacer fade para
-                            reemplazar con tabla de boleta
-
--->
-
-                            </td>
-                            <td><!-- parte a modificar con php -->
-
-                            </td>
-                          </tr>
-                          <tr>
-                            <!-- parte a modificar con php
-                                Insertar resultados de busqueda
-                                -->
-                          </tr>
-                          <tr>
-                          </tr>
-
-                        </tbody>
-                  </table>
-                </div>
-                <div class="col right">
-                <br>
-                    
-                </div>
-            </form>
+              </div>
 
             </div>
             <div class="row left">
@@ -83,5 +36,6 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
     <script>$(document).ready(function() { $('select').material_select();});</script>
+    <script type="text/javascript" src="../js/userList.js"></script>
 </body>
 </html>
