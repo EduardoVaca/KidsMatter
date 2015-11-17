@@ -2,7 +2,12 @@ $(document).ready(function(){
 
   getStates();
   $("#registrar").click(function(){
-    validaciones();
+    if(allFieldsFilled()){
+      validaciones();
+    }else{
+      failed();
+      alert("Campos incorrectos");
+    }
   });
 
 });
@@ -85,6 +90,25 @@ function insertChild(){
     }
   }
 );
+}
+
+function allFieldsFilled(){
+  if($('#nombre').val().length == 0){
+    return false;
+  }
+  if($('#CURP').val().length != 18){
+    return false;
+  }
+  if($('#apellidoPaterno').val().length == 0){
+    return false;
+  }
+  if($('#nacimiento').val().length == 0){
+    return false;
+  }
+  if($('#llegada').val().length == 0){
+    return false;
+  }
+  return true;
 }
 
 function success(){
