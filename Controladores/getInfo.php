@@ -20,12 +20,20 @@
       break;
 
     case 'getChildrenTable':
-      getChildrenByInstitution();
+      if($_SESSION["rolId"] == 1){
+        getChildren();
+      }else{
+        getChildrenByInstitution();
+      }
       break;
 
     case 'getChildrenTableByName':
       $name = $_POST["nombreChild"];
-      getChildrenTableByName($name);
+      if($_SESSION["rolId"] == 1){
+        getChildrenTableByName($name);
+      }else{
+        getChildrenTableByNameInInstitution($name);
+      }
       break;
 
     case 'getEducationLevelFromDb':
@@ -42,6 +50,45 @@
   }
 
   function getChildrenTableByName($name){
+
+    $conn = connectToDataBase();
+
+    $sql = "SELECT * FROM Child C, " .
+            "WHERE C.name LIKE \"" . $name . "\";";
+
+    $result = mysqli_query($conn, $sql);
+
+    $table = "<table class='striped teal lighten-3 z-depth-1 tabla-actividades'>
+                <thead>
+                  <tr>
+                    <th>CURP</th>
+                    <th>Nombre</th>
+                    <th>Agregar</th>
+                    <th>Ver</th>
+                  </tr>
+                </thead>
+                <tbody>";
+
+    if(mysqli_num_rows($result) > 0){
+        while($row = mysqli_fetch_assoc($result)){
+          $table .= "<tr id=\"" . $row["CURP"] . "\">
+                      <td>" . $row["CURP"] . "</td>
+                      <td>" . $row["name"] . "</td>
+                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal1'><i class='material-icons'>add</i></a></td>
+                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal2'><i class='material-icons'>search</i></a></td>
+                    </tr>";
+        }
+      $table .= "</thead></table>";
+      echo $table;
+
+    }else{
+      echo "No child found with that name";
+    }
+
+    closeDb($conn);
+  }
+
+  function getChildrenTableByNameInInstitution($name){
 
     $conn = connectToDataBase();
 
@@ -88,6 +135,47 @@
     $sql = "SELECT * FROM Child C, BelongsToInstitution BTI " .
             "WHERE BTI.institutionId =" .  $_SESSION["institutionId"] . " AND " .
             "C.CURP = BTI.CURP;";
+
+    $result = mysqli_query($conn, $sql);
+
+    $table = "<table class='striped teal lighten-3 z-depth-1 tabla-actividades'>
+                <thead>
+                  <tr>
+                    <th>CURP</th>
+                    <th>Nombre</th>
+                    <th>Sexo</th>
+                    <th>Cumpleanos</th>
+                    <th>Llegada</th>
+                  </tr>
+                </thead>
+                <tbody>";
+
+    if(mysqli_num_rows($result) > 0){
+        while($row = mysqli_fetch_assoc($result)){
+          $table .= "<tr id=\"" . $row["CURP"] . "\">
+                      <td>" . $row["CURP"] . "</td>
+                      <td>" . $row["name"] . "</td>
+                      <td>" . $row["gender"] . "</td>
+                      <td>" . $row["birthday"] . "</td>
+                      <td>" . $row["arrival"] . "</td>
+                    </tr>";
+        }
+      $table .= "</tbody></table>";
+      echo $table;
+
+    }else{
+      echo "Error";
+    }
+
+    closeDb($conn);
+
+  }
+
+  function getChildren(){
+
+    $conn = connectToDataBase();
+
+    $sql = "SELECT * FROM Child;";
 
     $result = mysqli_query($conn, $sql);
 
