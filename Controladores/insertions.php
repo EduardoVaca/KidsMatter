@@ -100,19 +100,18 @@
 
 
     if(mysqli_query($conn, $sql)){
-      echo "correctChild ";
 
       $sql = "INSERT INTO BelongsToInstitution (CURP, institutionId, arrival) VALUES (\"" . $curp .
               "\"," . $_SESSION["institutionId"] . ", \"" . $arrival . "\");";
 
       if(mysqli_query($conn, $sql)){
-        echo "correctRelation";
+        echo "1";
       }else{
-        echo "wrong rel";
+        echo "0";
       }
 
     }else{
-      echo "wrong";
+      echo "0";
 
       closeDb($conn);
     }
