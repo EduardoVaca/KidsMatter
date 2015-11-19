@@ -209,7 +209,7 @@
                       <td>" . $row["uName"] . "</td>
                       <td>" . $row["iName"] . "</td>
                       <td>" . $row["rName"] . "</td>
-                      <td>" . "<a id='" . $row["uName"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
+                      <td>" . "<a id='" . $row["uName"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='deleteUser(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
                     </tr>";
         }
       $table .= "</tbody></table>";
