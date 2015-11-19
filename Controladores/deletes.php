@@ -19,11 +19,11 @@ switch($action){
 function deleteUser($userId){
   $conn = connectToDatabase();
 
-  $sql = "DELETE FROM HasRole WHERE userName = \"" . $userId . "\";
-          DELETE FROM WorksInInstitution WHERE userName = \"" . $userId . "\";
-          DELETE FROM User WHERE userName = \"" . $userId . "\";";
+  $sql = "DELETE FROM HasRole WHERE userName = '$userId';" .
+          "DELETE FROM WorksInInstitution WHERE userName = '$userId';" .
+          "DELETE FROM User WHERE userName = '$userId';";
 
-  if (mysqli_query($conn, $sql)) {
+  if (mysqli_multi_query($conn, $sql)) {
     echo "1";
   } else {
     echo "0";

@@ -17,6 +17,7 @@ function getUserTable(){
 
 function deleteUser(id){
 
+  alert(id);
   var shouldDelete = confirm("Do you want to delete this user?");
   if (shouldDelete) {
     // the user wants to delete
@@ -27,7 +28,7 @@ function deleteUser(id){
     function(data){
       alert(data);
       if(data == "1"){
-        getUsersTable();
+        location.reload();
       }
     });
   } else {
