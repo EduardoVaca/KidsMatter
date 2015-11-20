@@ -46,18 +46,10 @@
                   <div class="input-field col s7">
                     <input id="direccionInstitucion" type="text" class="validate white-text thin labelRegister" placeholder="San Salvador 15, San Gil, Santiago de Querétaro, QRO">
                     <label for="direccionInstitucion" class="white-text thin labelRegister">Dirección</label>
+                    <a class='btn medium waves-effect waves-light cyan z-depth-1 modal-trigger center'  href='#modal1'>ver mapa</a>
                   </div>
                 </div>
-
-                  <div class="file-field input-field">
-                    <div class="btn">
-                      <span>Logo</span>
-                      <input type="file">
-                    </div>
-                    <div class="file-path-wrapper">
-                      <input class="file-path validate" type="text">
-                    </div>
-                  </div>
+                
                 </form>
 
             </div>
@@ -73,10 +65,20 @@
 
     </div>
     <div id="debug"></div>
+    
+    <div id="modal1" class="modal modal-fixed-footer">
+      <div id="editable" class="modal-content">
+      
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ocultar</a>
+      </div>
+    </div>
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
     <script type="text/javascript" src="../js/insertInstitution.js"></script>
+    <script type="text/javascript" src="../js/map.js"></script>
 </body>
 </html>

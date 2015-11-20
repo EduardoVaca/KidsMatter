@@ -22,8 +22,29 @@ function mapa(){
   
   var long=46.414385;
   var lat=10.013980;
+  /*
+  var response = '';
+  $.ajax({ type: "GET",
+           url: formURL(),
+           async: false,
+           dataType: 'json',
+           success : function(text)
+           {
+               response = text;
+           }
+  });
+
+  if (response.results.length > 0){
+    console.log(response.results[0].geometry.location);
+    lat=
+    $('#debug').html("Lat: " + response.results[0].geometry.location.lat + " Lon: " + response.results[0].geometry.location.lng);
+  }else{
+    $('#debug').html("Favor de ingresar una direccion correcta");
+  }
+  */
   
-  $('#editable2').html("<iframe class='center'"
+  
+  $('#editable').html("<iframe class='center'"
       +"width='600' "
       +"height='450' "
       +"frameborder='0' style='border:0' "
@@ -31,4 +52,11 @@ function mapa(){
       +"</iframe>"
     )
     $('.modal-trigger').leanModal();
+}
+
+function formURL(){
+  var url = "https://maps.googleapis.com/maps/api/geocode/json?address=";
+  var parameters = $('#address').val().replace(/\s/g, '+');
+
+  return url + parameters + "&key=AIzaSyDX8mSb8xN1KR_Za_tPXHor6OJjM4smlR8";
 }

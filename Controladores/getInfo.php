@@ -237,7 +237,6 @@
                         <th>Email</th>
                         <th>Teléfono</th>
                         <th>Eliminar</th>
-                        <th>Ubicacion</th>
                       </tr>
                     </thead>
                     <tbody>";
@@ -249,7 +248,6 @@
                           <td>" . $row["email"] . "</td>
                           <td>" . $row["phone"] . "</td>
                           <td>" . "<a id='" . $row["institutionId"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center'  href='#modal1'><i class='material-icons'>clear</i></a></td>
-                          <td> <a class='btn medium waves-effect waves-light cyan z-depth-1 modal-trigger center'  href='#modal2'>Mapa</a> </td>
                         </tr>";
             }
           $table .= "</tbody></table>";
