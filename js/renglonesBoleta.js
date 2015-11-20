@@ -1,20 +1,21 @@
 $(document).ready(function(){
     getLevel();
     $num=1;
-    
+
 
     $("#crearGrafica").click(createGraph);
 });
 
 
 function refresh(){
-    $('#muestraBoleta').html("<table class='striped justified centered teal lighten-3 z-depth-1 tabla-actividades ' id='boleta'>"
+    $('#muestraBoleta').html("<p id='GPA'></p><table class='striped justified centered teal lighten-3 z-depth-1 tabla-actividades ' id='boleta'>"
         +" <thead> <tr class='center s3'> <th colspan='2' id='gradoEducativo'> </th>"
         +"</tr> <tr> <th data-field='id' >Materia</th> <th data-field='escolaridad' >Calificación</th>"
         +"</tr> </thead> <tbody id='boleta'> </tbody> </table>"
         +"<a id='agregarMateria' class='btn-floating medium waves-effect waves-light cyan z-depth-1' onClick='getCourse()'><i class='material-icons'>add</i></a>"
         );
     getLevel();
+    getChildGPA();
 }
 
 function getLevel(){
@@ -32,6 +33,22 @@ function getLevel(){
      $("#crearGrafica").click(createGraph);
   });
 
+}
+
+function getChildGPA(){
+
+  var actualCURP = $('#secret').text();
+  $.post("../Controladores/getInfo.php", {
+        action: "getChildGPA",
+        CURP:  actualCURP;
+  },
+  function(data){
+    if(data != "0"){
+      $('GPA').append(data);
+    }else{
+      alert(data);
+    }
+  });
 }
 
 function getCourse(){
