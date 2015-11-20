@@ -21,8 +21,8 @@ $(document).ready(function(){
 
 function mapa(){
   
-  var long=46.414385;
-  var lati=10.013980;
+  var long=-100.4771991;
+  var lati=20.6122835;
 
   
   var response = '';
