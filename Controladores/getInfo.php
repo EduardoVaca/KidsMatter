@@ -445,10 +445,10 @@
     function getChildGPA($CURP){
       $conn = connectToDatabase();
       $sql = "SELECT AVG(gradeObtained) as Average FROM ReportCard WHERE CURP = '$CURP';";
-
       if ($result = mysqli_query($conn, $sql)) {
+        $row = mysqli_fetch_assoc($result);
         $avg = $row["Average"];
-        echo $avg;
+        echo number_format((float)$avg, 2, '.', '');
       }else {
         echo "0";
       }

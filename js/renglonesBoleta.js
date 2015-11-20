@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 
 function refresh(){
-    $('#muestraBoleta').html("<p id='GPA'></p><table class='striped justified centered teal lighten-3 z-depth-1 tabla-actividades ' id='boleta'>"
+    $('#muestraBoleta').html("<p id='GPA'>Promedio Acumulado: </p><table class='striped justified centered teal lighten-3 z-depth-1 tabla-actividades ' id='boleta'>"
         +" <thead> <tr class='center s3'> <th colspan='2' id='gradoEducativo'> </th>"
         +"</tr> <tr> <th data-field='id' >Materia</th> <th data-field='escolaridad' >Calificación</th>"
         +"</tr> </thead> <tbody id='boleta'> </tbody> </table>"
@@ -40,11 +40,12 @@ function getChildGPA(){
   var actualCURP = $('#secret').text();
   $.post("../Controladores/getInfo.php", {
         action: "getChildGPA",
-        CURP:  actualCURP;
+        CURP:  actualCURP,
   },
   function(data){
-    if(data != "0"){
-      $('GPA').append(data);
+   
+    if(!(data == "0")){
+      $('#GPA').append("<b>" + data + "</b>");
     }else{
       alert(data);
     }
