@@ -73,7 +73,6 @@
                     <th>Nombre</th>
                     <th>Agregar</th>
                     <th>Ver</th>
-                    <th>Eliminar</th>
                   </tr>
                 </thead>
                 <tbody>";
@@ -85,7 +84,6 @@
                       <td>" . $row["name"] . "</td>
                       <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal1'><i class='material-icons'>add</i></a></td>
                       <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal2'><i class='material-icons'>search</i></a></td>
-                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
                     </tr>";
         }
       $table .= "</thead></table>";
@@ -156,6 +154,7 @@
                     <th>Sexo</th>
                     <th>Cumpleanos</th>
                     <th>Llegada</th>
+                    <th>Eliminar</th>
                   </tr>
                 </thead>
                 <tbody>";
@@ -168,6 +167,7 @@
                       <td>" . $row["gender"] . "</td>
                       <td>" . $row["birthday"] . "</td>
                       <td>" . $row["arrival"] . "</td>
+                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='deleteChild(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
                     </tr>";
         }
       $table .= "</tbody></table>";
@@ -247,7 +247,7 @@
                           <td>" . $row["name"] . "</td>
                           <td>" . $row["email"] . "</td>
                           <td>" . $row["phone"] . "</td>
-                          <td>" . "<a id='" . $row["institutionId"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
+                          <td>" . "<a id='" . $row["institutionId"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='deleteInstitution(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
                         </tr>";
             }
           $table .= "</tbody></table>";
@@ -294,7 +294,7 @@
                       <td>" . $row["birthday"] . "</td>
                       <td>" . $row["arrival"] . "</td>
                       <td>" . $row["iName"] . "<td>
-                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
+                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='deleteChild(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
                     </tr>";
         }
       $table .= "</tbody></table>";
