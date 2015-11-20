@@ -17,8 +17,7 @@ function getUserTable(){
 
 function deleteUser(id){
 
-  alert(id);
-  var shouldDelete = confirm("Do you want to delete this user?");
+  var shouldDelete = confirm("Desea eliminar este usuario de forma permanente?");
   if (shouldDelete) {
     // the user wants to delete
     $.post("../Controladores/deletes.php", {
@@ -26,7 +25,6 @@ function deleteUser(id){
       userId: id
     },
     function(data){
-      alert(data);
       if(data == "1"){
         location.reload();
       }

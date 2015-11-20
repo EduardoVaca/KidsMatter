@@ -294,7 +294,7 @@
                       <td>" . $row["birthday"] . "</td>
                       <td>" . $row["arrival"] . "</td>
                       <td>" . $row["iName"] . "<td>
-                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
+                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='deleteChild(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
                     </tr>";
         }
       $table .= "</tbody></table>";
