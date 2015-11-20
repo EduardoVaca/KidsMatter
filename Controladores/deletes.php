@@ -29,6 +29,8 @@ switch($action){
 function deleteUser($userId){
   $conn = connectToDatabase();
 
+  mysqli_begin_transaction($conn, MYSQLI_TRANS_START_READ_WRITE);
+
   $sql = "DELETE FROM HasRole WHERE userName = '$userId';" .
           "DELETE FROM WorksInInstitution WHERE userName = '$userId';" .
           "DELETE FROM User WHERE userName = '$userId';";
@@ -38,6 +40,8 @@ function deleteUser($userId){
   } else {
     echo "0";
   }
+
+  mysqli_commit($conn);
   closeDb($conn);
 }
 
@@ -59,6 +63,8 @@ function deleteUserSameConnection($userId, $conn){
 function deleteChild($CURP){
   $conn = connectToDatabase();
 
+  mysqli_begin_transaction($conn, MYSQLI_TRANS_START_READ_WRITE);
+
   $sql = "DELETE FROM BelongsToInstitution WHERE CURP = '$CURP';" .
           "DELETE FROM ReportCard WHERE CURP = '$CURP';" .
           "DELETE FROM Child WHERE CURP = '$CURP';";
@@ -68,6 +74,8 @@ function deleteChild($CURP){
   } else {
     echo "0" . mysqli_error($conn);
   }
+
+  mysqli_commit($conn);
   closeDb($conn);
 }
 
@@ -86,6 +94,8 @@ function deleteInstitution($institutionId){
 
   //Delete all children of Institution
   $conn = connectToDatabase();
+
+  mysqli_begin_transaction($conn, MYSQLI_TRANS_START_READ_WRITE);
 
   $sql = "SELECT CURP FROM BelongsToInstitution WHERE institutionId = '$institutionId';";
   $result = mysqli_query($conn, $sql);
@@ -113,6 +123,7 @@ function deleteInstitution($institutionId){
   } else {
       echo "0" . mysqli_error($conn);
   }
+  mysqli_commit($conn);
   closeDb($conn);
 
 }
