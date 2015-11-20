@@ -7,7 +7,7 @@
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
     </head>
-<body class="cyan">
+<body class="cyan darken-3">
 
     <div class="container">
 
@@ -17,47 +17,40 @@
       </div>
 
         <div class="main-wrapper">
-            <div class="row card-panel teal lighten-2 zdepth-3">
+            <div class="row card-panel cyan  zdepth-3 right-align">
               <img id="errorImage" src="../img/errorInstitution.png" style="display:none">
               <img id="successImage" src="../img/institutionSuccess.png" style="display:none">
+              <div class="col s12"></div>
               <form class="col s12">
                 <div class="row">
-                  <div class="input-field col s7">
-                    <input id="nombreInstitucion" type="text" class="validate white-text thin labelRegister" placeholder="Casa de los Niños Jurica">
-                    <label for="nombreInstitucion" class="white-text thin labelRegister">Institución</label>
+                  <div class="input-field col s12">
+                    <input id="nombreInstitucion" type="text" class="validate white-text labelRegister" placeholder="Casa de los Niños Jurica">
+                    <label for="nombreInstitucion" class="white-text  labelRegister ">Institución</label>
                   </div>
                 </div>
 
                 <div class="row">
-                  <div class="input-field col s7">
-                    <input id="correoInstitucion" type="text" class="validate white-text thin labelRegister" placeholder="casajurica@gmail.com">
-                    <label for="correoInstitucion" class="white-text thin labelRegister">Correo</label>
+                  <div class="input-field col s12">
+                    <input id="correoInstitucion" type="text" class="validate white-text labelRegister" placeholder="casajurica@gmail.com">
+                    <label for="correoInstitucion" class="white-text  labelRegister">Correo</label>
                   </div>
                 </div>
 
                 <div class="row">
-                  <div class="input-field col s7">
-                    <input id="telefonoInstitucion" type="text" class="validate white-text thin labelRegister" placeholder="4272710099">
-                    <label for="telefonoInstitucion" class="white-text thin labelRegister">Teléfono</label>
+                  <div class="input-field col s12">
+                    <input id="telefonoInstitucion" type="text" class="validate white-text labelRegister" placeholder="4272710099">
+                    <label for="telefonoInstitucion" class="white-text  labelRegister">Teléfono</label>
                   </div>
                 </div>
 
                 <div class="row">
-                  <div class="input-field col s7">
-                    <input id="direccionInstitucion" type="text" class="validate white-text thin labelRegister" placeholder="San Salvador 15, San Gil, Santiago de Querétaro, QRO">
-                    <label for="direccionInstitucion" class="white-text thin labelRegister">Dirección</label>
+                  <div class="input-field col s12">
+                    <input id="direccionInstitucion" type="text" class="validate white-text  labelRegister" placeholder="San Salvador 15, San Gil, Santiago de Querétaro, QRO">
+                    <label for="direccionInstitucion" class="white-text  labelRegister">Dirección</label>
+                    <a id="mapa" class='btn medium waves-effect waves-light cyan darken-4 z-depth-1 modal-trigger center'  href='#modal1'>ver mapa</a>
                   </div>
                 </div>
-
-                  <div class="file-field input-field">
-                    <div class="btn">
-                      <span>Logo</span>
-                      <input type="file">
-                    </div>
-                    <div class="file-path-wrapper">
-                      <input class="file-path validate" type="text">
-                    </div>
-                  </div>
+                
                 </form>
 
             </div>
@@ -65,7 +58,7 @@
               <a class="btn waves-effect waves-light right red accent-2" href="Menu.html">Regresar</a>
             </div>
             <div class="row align-center">
-                <button id="registrar" class="btn waves-effect waves-light right" type="submit" name="action">
+                <button id="registrar" class="btn waves-effect light-green waves-light right" type="submit" name="action">
                 <i class="material-icons">Registrar</i>
               </button>
             </div>
@@ -73,10 +66,24 @@
 
     </div>
     <div id="debug"></div>
+    
+    <div id="modal1" class="modal modal-fixed-footer">
+      <div id="editable" class="modal-content">
+        <div id="map" style="height:100%;width:100%"></div>
+        
+    
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ocultar</a>
+      </div>
+    </div>
 
     <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
     <script type="text/javascript" src="../js/insertInstitution.js"></script>
+    <script type="text/javascript" src="../js/map.js"></script>
+    <script>$('.modal-trigger').leanModal();</script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAReHXAkYJEmszq3GTmEvk5MS5prOtgADU&region=MX"></script>
 </body>
 </html>
