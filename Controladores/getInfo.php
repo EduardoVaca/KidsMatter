@@ -247,7 +247,7 @@
                           <td>" . $row["name"] . "</td>
                           <td>" . $row["email"] . "</td>
                           <td>" . $row["phone"] . "</td>
-                          <td>" . "<a id='" . $row["institutionId"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center'  href='#modal1'><i class='material-icons'>clear</i></a></td>
+                          <td>" . "<a id='" . $row["institutionId"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='deleteInstitution(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
                         </tr>";
             }
           $table .= "</tbody></table>";
