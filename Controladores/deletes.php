@@ -18,6 +18,11 @@ switch($action){
     $CURP = $_POST['CURP'];
     deleteChild($CURP);
     break;
+
+  case 'deleteInstitution':
+    $institutionId = $_POST['institutionId'];
+    deleteInstitution($institutionId);
+    break;
 }
 
 
@@ -36,6 +41,20 @@ function deleteUser($userId){
   closeDb($conn);
 }
 
+function deleteUserSameConnection($userId){
+
+  $sql = "DELETE FROM HasRole WHERE userName = '$userId';" .
+          "DELETE FROM WorksInInstitution WHERE userName = '$userId';" .
+          "DELETE FROM User WHERE userName = '$userId';";
+
+  if (mysqli_multi_query($conn, $sql)) {
+    echo "1";
+  } else {
+    echo "0";
+  }
+
+}
+
 
 function deleteChild($CURP){
   $conn = connectToDatabase();
@@ -50,6 +69,52 @@ function deleteChild($CURP){
     echo "0";
   }
   closeDb($conn);
+}
+
+function deleteChildSameConnection($CURP){
+
+  $sql = "DELETE FROM BelongsToInstitution WHERE CURP = '$CURP';" .
+          "DELETE FROM ReportCard WHERE CURP = '$CURP';" .
+          "DELETE FROM Child WHERE CURP = '$CURP';";
+
+  mysqli_multi_query($conn, $sql));
+
+}
+
+
+function deleteInstitution($institutionId){
+
+  //Delete all children of Institution
+  $conn = connectToDatabase();
+
+  $sql = "SELECT CURP FROM BelongsToInstitution WHERE institutionId = '$institutionId';";
+  $result = mysqli_query($conn, $sql);
+  if(mysqli_num_rows($result) > 0){
+    while($row = mysqli_fetch_assoc($result)){
+
+      deleteChildSameConnection($row["CURP"]);
+    }
+  }
+
+  //Delete all users from institution
+  $sql = "SELECT userName FROM WorksInInstitution WHERE institutionId = '$institutionId';";
+  $result = mysqli_query($conn, $sql);
+  if(mysqli_num_rows($result) > 0){
+    while($row = mysqli_fetch_assoc($result)){
+
+      deleteUserSameConnection($row["userName"]);
+    }
+  }
+
+  $sql = "DELETE FROM Institution WHERE institutionId = '$institutionId'";
+
+  if (mysqli_query($conn, $sql)) {
+    echo "1";
+  } else {
+      echo "0" . mysqli_error($conn);
+  }
+  closeDb($conn);
+
 }
 
 ?>
