@@ -52,6 +52,11 @@
       getCoursesFromDb();
       break;
 
+    case 'getChildGPA':
+      $CURP = $_POST["CURP"];
+      getChildGPA($CURP);
+      break;
+
     default:
       # code...
       break;
@@ -435,6 +440,20 @@
         }
 
         closeDb($conn);
+    }
+
+    function getChildGPA($CURP){
+      $conn = connectToDatabase();
+      $sql = "SELECT AVG(gradeObtained) as Average FROM ReportCard WHERE CURP = '$CURP';";
+
+      if ($result = mysqli_query($conn, $sql)) {
+        $avg = $row["Average"];
+        echo $avg;
+      }else {
+        echo "0";
+      }
+
+      closeDb($conn);
     }
 
 ?>
