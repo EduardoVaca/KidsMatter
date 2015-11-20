@@ -14,7 +14,7 @@ $(document).ready(function(){
     }
     
     
-    $('#map').click(mapa);
+    $('#mapa').click(mapa);
     
         
 });
@@ -45,15 +45,13 @@ function mapa(){
     $('#debug').html("Favor de ingresar una direccion correcta");
   }
   
-  $('#editable').html("<iframe class='center'"
-      +"width='600' "
-      +"height='450' "
-      +"frameborder='0' style='border:0' "
-      +"src='https://www.google.com/maps/embed/v1/view?key=AIzaSyBrXxF4_7GPXpK8Tohc1w8yicTLF8d4mnk&center="+lat+","+long+"&zoom=15&maptype=satellite' allowfullscreen>"
-      +"</iframe>"
-    )
-    
-   // $('.modal-trigger').leanModal();
+  
+   var map;
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: -34.397, lng: 150.644},
+      zoom: 8
+    });
+        
 }
 
 function formURL(){

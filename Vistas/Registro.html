@@ -46,7 +46,7 @@
                   <div class="input-field col s7">
                     <input id="direccionInstitucion" type="text" class="validate white-text thin labelRegister" placeholder="San Salvador 15, San Gil, Santiago de Querétaro, QRO">
                     <label for="direccionInstitucion" class="white-text thin labelRegister">Dirección</label>
-                    <a id="map" class='btn medium waves-effect waves-light cyan z-depth-1 modal-trigger center'  href='#modal1'>ver mapa</a>
+                    <a id="mapa" class='btn medium waves-effect waves-light cyan z-depth-1 modal-trigger center'  href='#modal1'>ver mapa</a>
                   </div>
                 </div>
                 
@@ -68,7 +68,9 @@
     
     <div id="modal1" class="modal modal-fixed-footer">
       <div id="editable" class="modal-content">
-      
+        <div id="map" style="height:100%;width:100%"></div>
+        
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAReHXAkYJEmszq3GTmEvk5MS5prOtgADU&callback=initMap"></script>
       </div>
       <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ocultar</a>
