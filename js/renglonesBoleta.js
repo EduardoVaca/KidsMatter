@@ -9,6 +9,14 @@ $(document).ready(function(){
 });
 
 
+function refresh(){
+    $('#muestraBoleta').html("<table class='striped justified centered teal lighten-3 z-depth-1 tabla-actividades '>"
+        +" <thead> <tr class='center s3'> <th colspan='2' id='gradoEducativo'> </th>"
+        +"</tr> <tr> <th data-field='id' >Materia</th> <th data-field='escolaridad' >Calificación</th>"
+        +"</tr> </thead> <tbody id='boleta'> </tbody> </table>"
+        );
+}
+
 function getLevel(){
 
   $.post("../Controladores/getInfo.php", {

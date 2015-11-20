@@ -82,7 +82,7 @@
           $table .= "<tr id=\"" . $row["CURP"] . "\">
                       <td>" . $row["CURP"] . "</td>
                       <td>" . $row["name"] . "</td>
-                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal1'><i class='material-icons'>add</i></a></td>
+                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id);refresh()' href='#modal1'><i class='material-icons'>add</i></a></td>
                       <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal2'><i class='material-icons'>search</i></a></td>
                     </tr>";
         }
@@ -122,7 +122,7 @@
           $table .= "<tr id=\"" . $row["CURP"] . "\">
                       <td>" . $row["CURP"] . "</td>
                       <td>" . $row["name"] . "</td>
-                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal1'><i class='material-icons'>add</i></a></td>
+                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id);refresh()' href='#modal1'><i class='material-icons'>add</i></a></td>
                       <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal2'><i class='material-icons'>search</i></a></td>
                     </tr>";
         }
