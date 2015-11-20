@@ -1,8 +1,6 @@
 $(document).ready(function(){
     getLevel();
     $num=1;
-
-
     $("#crearGrafica").click(createGraph);
 });
 
@@ -27,9 +25,9 @@ function getLevel(){
       //alert(data);
      $('#gradoEducativo').append("<select id='nivelCombo'>" + data + "</select>");
      $('#nivelCombo').material_select();
-     $('#grafica').append("<select id='nivelComboGrafica'>" + data + "</select>");
+     $('#comandosGrafica').html("<select id='nivelComboGrafica'>" + data + "</select>");
      $('#nivelComboGrafica').material_select();
-     $('#grafica').append("<a id='crearGrafica' class='btn waves-effect waves-light right'><i class='material-icons'>search</i></a>");
+     $('#comandosGrafica').append("<a id='crearGrafica' class='btn waves-effect waves-light right'><i class='material-icons'>search</i></a>");
      $("#crearGrafica").click(createGraph);
   });
 
@@ -94,9 +92,16 @@ function insertGradeInReportCard(){
     });
 }
 
+
+function refreshModal2(){
+  
+  getLevel();
+  $('#grafica').html(" ");
+}
+
 function createGraph(){
 
-
+  $('#grafica').html(" ");
   var actualCURP = $('#secret').text();
   var actualGradeId = $('#nivelComboGrafica').val();
 
