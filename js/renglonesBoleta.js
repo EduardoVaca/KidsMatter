@@ -15,6 +15,7 @@ function refresh(){
         +"</tr> <tr> <th data-field='id' >Materia</th> <th data-field='escolaridad' >Calificación</th>"
         +"</tr> </thead> <tbody id='boleta'> </tbody> </table>"
         );
+    getLevel();
 }
 
 function getLevel(){
