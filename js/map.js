@@ -52,6 +52,12 @@ function mapa(){
       center: {lat: lati, lng: long},
       zoom: 15
     });
+    
+    var marker = new google.maps.Marker({
+      position: {lat: lati, lng: long},
+      map: map,
+      title: 'Hello World!'
+    });
         
 }
 
