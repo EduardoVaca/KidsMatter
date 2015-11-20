@@ -10,9 +10,11 @@ function getInstitutionTable(){
     },
     function(data){
       $('#institutions').append(data);
-      //$('.modal-trigger').leanModal();
+      $('.modal-trigger').leanModal();
     }
   )
+  
+  
 }
 
 

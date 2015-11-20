@@ -41,7 +41,7 @@
     
     <div id="modal1" class="modal modal-fixed-footer">
       <div id="editable" class="modal-content">
-      
+        <div id="map" style="height:100%;width:100%"></div>
       </div>
       <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ocultar</a>
@@ -58,6 +58,9 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
     <script type="text/javascript" src="../js/institutionList.js"></script>
+    <script type="text/javascript" src="../js/map.js"></script>
     <script>$(document).ready(function() { $('select').material_select();});</script>
+    <script>$('.modal-trigger').leanModal();</script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAReHXAkYJEmszq3GTmEvk5MS5prOtgADU&region=MX"></script>
 </body>
 </html>

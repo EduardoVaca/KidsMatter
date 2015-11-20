@@ -167,7 +167,7 @@
                       <td>" . $row["gender"] . "</td>
                       <td>" . $row["birthday"] . "</td>
                       <td>" . $row["arrival"] . "</td>
-                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='deleteChild(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
+                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 center' onclick='deleteChild(this.id)'><i class='material-icons'>clear</i></a></td>
                     </tr>";
         }
       $table .= "</tbody></table>";
@@ -209,7 +209,7 @@
                       <td>" . $row["uName"] . "</td>
                       <td>" . $row["iName"] . "</td>
                       <td>" . $row["rName"] . "</td>
-                      <td>" . "<a id='" . $row["uName"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='deleteUser(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
+                      <td>" . "<a id='" . $row["uName"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 center' onclick='deleteUser(this.id)'><i class='material-icons'>clear</i></a></td>
                     </tr>";
         }
       $table .= "</tbody></table>";
@@ -236,6 +236,7 @@
                         <th>Nombre</th>
                         <th>Email</th>
                         <th>Teléfono</th>
+                        <th>Mapa</th>
                         <th>Eliminar</th>
                       </tr>
                     </thead>
@@ -247,7 +248,8 @@
                           <td>" . $row["name"] . "</td>
                           <td>" . $row["email"] . "</td>
                           <td>" . $row["phone"] . "</td>
-                          <td>" . "<a id='" . $row["institutionId"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='deleteInstitution(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
+                          <td>" . "<a id='" . $row["address"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='buildMapInList(this.id)' href='#modal1'><i class='material-icons'>map</i></a></td>
+                          <td>" . "<a id='" . $row["institutionId"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 center' onclick='deleteInstitution(this.id)'><i class='material-icons'>clear</i></a></td>
                         </tr>";
             }
           $table .= "</tbody></table>";
@@ -414,7 +416,7 @@
 
     function getCoursesFromDb(){
         $conn = connectToDatabase();
-        $sql = "SELECT * FROM Course";
+        $sql = "SELECT * FROM Course ORDER BY name ASC";
         $result = mysqli_query($conn, $sql);
         $json = array();
 
