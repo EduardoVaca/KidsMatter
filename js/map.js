@@ -22,7 +22,7 @@ $(document).ready(function(){
 function mapa(){
   
   var long=46.414385;
-  var lat=10.013980;
+  var lati=10.013980;
 
   
   var response = '';
@@ -38,7 +38,7 @@ function mapa(){
 
   if (response.results.length > 0){
     console.log(response.results[0].geometry.location);
-    lat=response.results[0].geometry.location.lat;
+    lati=response.results[0].geometry.location.lat;
     long=response.results[0].geometry.location.lng;
     $('#debug').html("Lat: " + response.results[0].geometry.location.lat + " Lon: " + response.results[0].geometry.location.lng);
   }else{
@@ -47,9 +47,10 @@ function mapa(){
   
   
    var map;
+    
     map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 8
+      center: {lat: lati, lng: long},
+      zoom: 15
     });
         
 }
