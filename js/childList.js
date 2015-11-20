@@ -26,6 +26,8 @@ function deleteChild(id){
     function(data){
       if(data == "1"){
         location.reload();
+      }else{
+        alert(data);
       }
     });
   } else {

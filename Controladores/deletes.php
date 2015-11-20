@@ -41,7 +41,7 @@ function deleteUser($userId){
   closeDb($conn);
 }
 
-function deleteUserSameConnection($userId){
+function deleteUserSameConnection($userId, $conn){
 
   $sql = "DELETE FROM HasRole WHERE userName = '$userId';" .
           "DELETE FROM WorksInInstitution WHERE userName = '$userId';" .
@@ -66,18 +66,18 @@ function deleteChild($CURP){
   if (mysqli_multi_query($conn, $sql)) {
     echo "1";
   } else {
-    echo "0";
+    echo "0" . mysqli_error($conn);
   }
   closeDb($conn);
 }
 
-function deleteChildSameConnection($CURP){
+function deleteChildSameConnection($CURP, $conn){
 
   $sql = "DELETE FROM BelongsToInstitution WHERE CURP = '$CURP';" .
           "DELETE FROM ReportCard WHERE CURP = '$CURP';" .
           "DELETE FROM Child WHERE CURP = '$CURP';";
 
-  mysqli_multi_query($conn, $sql));
+  mysqli_multi_query($conn, $sql);
 
 }
 
@@ -92,7 +92,7 @@ function deleteInstitution($institutionId){
   if(mysqli_num_rows($result) > 0){
     while($row = mysqli_fetch_assoc($result)){
 
-      deleteChildSameConnection($row["CURP"]);
+      deleteChildSameConnection($row["CURP"], $conn);
     }
   }
 
@@ -102,7 +102,7 @@ function deleteInstitution($institutionId){
   if(mysqli_num_rows($result) > 0){
     while($row = mysqli_fetch_assoc($result)){
 
-      deleteUserSameConnection($row["userName"]);
+      deleteUserSameConnection($row["userName"], $conn);
     }
   }
 
