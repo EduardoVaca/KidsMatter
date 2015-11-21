@@ -71,7 +71,7 @@
 
     $result = mysqli_query($conn, $sql);
 
-    $table = "<table class='striped teal lighten-3 z-depth-1 tabla-actividades'>
+    $table = "<table class='responsive-table striped teal lighten-3 z-depth-1 tabla-actividades'>
                 <thead>
                   <tr>
                     <th>CURP</th>
@@ -111,7 +111,7 @@
 
     $result = mysqli_query($conn, $sql);
 
-    $table = "<table class='striped teal lighten-3 z-depth-1 tabla-actividades'>
+    $table = "<table class='responsive-table striped teal lighten-3 z-depth-1 tabla-actividades'>
                 <thead>
                   <tr>
                     <th>CURP</th>
@@ -151,7 +151,7 @@
 
     $result = mysqli_query($conn, $sql);
 
-    $table = "<table class='striped teal lighten-3 z-depth-1 tabla-actividades'>
+    $table = "<table class='responsive-table striped teal lighten-3 z-depth-1 tabla-actividades'>
                 <thead>
                   <tr>
                     <th>CURP</th>
@@ -197,7 +197,7 @@
 
     $result = mysqli_query($conn, $sql);
 
-    $table = "<table class='striped teal lighten-3 z-depth-1 tabla-actividades'>
+    $table = "<table class='responsive-table striped teal lighten-3 z-depth-1 tabla-actividades'>
                 <thead>
                   <tr>
                     <th>Usuario</th>
@@ -235,7 +235,7 @@
 
         $result = mysqli_query($conn, $sql);
 
-        $table = "<table class='striped teal lighten-3 z-depth-1 tabla-actividades'>
+        $table = "<table class='responsive-table striped teal lighten-3 z-depth-1 tabla-actividades'>
                     <thead>
                       <tr>
                         <th>Nombre</th>
@@ -278,7 +278,7 @@
 
     $result = mysqli_query($conn, $sql);
 
-    $table = "<table class='striped teal lighten-3 z-depth-1 tabla-actividades'>
+    $table = "<table class='responsive-table striped teal lighten-3 z-depth-1 tabla-actividades'>
                 <thead>
                   <tr>
                     <th>CURP</th>

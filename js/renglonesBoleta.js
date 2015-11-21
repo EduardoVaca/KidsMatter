@@ -6,12 +6,12 @@ $(document).ready(function(){
 
 
 function refresh(){
-    $('#muestraBoleta').html("<p id='GPA'>Promedio Acumulado: </p><table class='striped justified centered teal lighten-3 z-depth-1 tabla-actividades ' id='boleta'>"
-        +" <thead> <tr class='center s3'> <th colspan='2' id='gradoEducativo'> </th>"
-        +"</tr> <tr> <th data-field='id' >Materia</th> <th data-field='escolaridad' >Calificación</th>"
+    $('#muestraBoleta').html("<p id='GPA'>Promedio Acumulado: </p><div id='gradoEducativo'></div><table class='responsive-table striped justified centered teal lighten-3 z-depth-1 tabla-actividades ' id='boleta'>"
+        +" <thead> <tr> <th data-field='id' >Materia</th> <th data-field='escolaridad' >Calificación</th>"
         +"</tr> </thead> <tbody id='boleta'> </tbody> </table>"
         +"<a id='agregarMateria' class='btn-floating medium waves-effect waves-light cyan z-depth-1' onClick='getCourse()'><i class='material-icons'>add</i></a>"
         );
+    getCourse();
     getLevel();
     getChildGPA();
 }
@@ -62,8 +62,8 @@ function getCourse(){
           insertGradeInReportCard();
       }
 
-     $('#boleta').append("<tr><td><div class='input-field col s4'><select id='courses"+$num+"'>" + data + "</select></div></td>"
-        +"<td><div class='input-field col s4'><input id='grade"+$num+"' type='text' class='validate'>"
+     $('#boleta').append("<tr><td><div class='input-field'><select id='courses"+$num+"'>" + data + "</select></div></td>"
+        +"<td><div class='input-field '><input id='grade"+$num+"' type='text' class='validate'>"
         +"<label for='"+$num+"'>Calificacion</label></div></td></tr>");
      $str="#courses"+$num;
      $($str).material_select();
