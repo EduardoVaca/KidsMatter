@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    getLevel();
     $num=1;
     $("#crearGrafica").click(createGraph);
 });
@@ -12,12 +11,12 @@ function refresh(){
         +"<a id='agregarMateria' class='btn-floating medium waves-effect waves-light cyan z-depth-1' onClick='getCourse()'><i class='material-icons'>save</i></a>"
         );
     getCourse();
-    getLevel();
+    getMissingLevel();
     getChildGPA();
 }
 
-function getLevel(){
-  
+function getMissingLevel(){
+
   var actualCURP = $('#secret').text();
 
   $.post("../Controladores/getInfo.php", {
@@ -34,6 +33,24 @@ function getLevel(){
      $("#crearGrafica").click(createGraph);
   });
 
+}
+
+function getStoredLevel(){
+  var actualCURP = $('#secret').text();
+
+  $.post("../Controladores/getInfo.php", {
+        action: "getStoredEducationLevel",
+        CURP: actualCURP,
+  },
+  function(data){
+      //alert(data);
+     $('#gradoEducativo').append("<select id='nivelCombo'>" + data + "</select>");
+     $('#nivelCombo').material_select();
+     $('#comandosGrafica').html("<select id='nivelComboGrafica'>" + data + "</select>");
+     $('#nivelComboGrafica').material_select();
+     $('#comandosGrafica').append("<a id='crearGrafica' class='btn waves-effect waves-light right'><i class='material-icons'>search</i></a>");
+     $("#crearGrafica").click(createGraph);
+  });
 }
 
 function getChildGPA(){
@@ -97,8 +114,8 @@ function insertGradeInReportCard(){
 
 
 function refreshModal2(){
-  
-  getLevel();
+
+  getStoredLevel();
   $('#grafica').html(" ");
 }
 
