@@ -1,4 +1,8 @@
 $(document).ready(function(){
+<<<<<<< HEAD
+=======
+    //getLevel();
+>>>>>>> Visuales
     $num=1;
     $("#crearGrafica").click(createGraph);
 });
