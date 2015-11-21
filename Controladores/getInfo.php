@@ -84,7 +84,7 @@
 
     $result = mysqli_query($conn, $sql);
 
-    $table = "<table class='responsive-table striped teal lighten-3 z-depth-1 tabla-actividades'>
+    $table = "<table class='responsive-table striped teal lighten-3 z-depth-1 tabla-actividades s8 m8 l8'>
                 <thead>
                   <tr>
                     <th>CURP</th>
