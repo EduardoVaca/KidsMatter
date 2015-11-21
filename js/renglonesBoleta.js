@@ -6,10 +6,10 @@ $(document).ready(function(){
 
 
 function refresh(){
-    $('#muestraBoleta').html("<p id='GPA'>Promedio Acumulado: </p><div id='gradoEducativo'></div><table class='responsive-table striped justified centered teal lighten-3 z-depth-1 tabla-actividades ' id='boleta'>"
+    $('#muestraBoleta').html("<p id='GPA'>Promedio Acumulado: </p><div id='gradoEducativo'></div><table class='responsive-table striped justified centered teal lighten-3 z-depth-1 tabla-actividades col s12 ' id='boleta'>"
         +" <thead> <tr> <th data-field='id' >Materia</th> <th data-field='escolaridad' >Calificación</th>"
         +"</tr> </thead> <tbody id='boleta'> </tbody> </table>"
-        +"<a id='agregarMateria' class='btn-floating medium waves-effect waves-light cyan z-depth-1' onClick='getCourse()'><i class='material-icons'>add</i></a>"
+        +"<a id='agregarMateria' class='btn-floating medium waves-effect waves-light cyan z-depth-1' onClick='getCourse()'><i class='material-icons'>save</i></a>"
         );
     getCourse();
     getLevel();
