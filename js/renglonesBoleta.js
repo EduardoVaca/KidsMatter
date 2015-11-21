@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    getLevel();
+    //getLevel();
     $num=1;
     $("#crearGrafica").click(createGraph);
 });
