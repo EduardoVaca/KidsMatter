@@ -62,6 +62,14 @@
       getChildGPA($CURP);
       break;
 
+    case 'getReportCardsOfChildren':
+      if($_SESSION["rolId"] == 1){
+        getReportCardsOfChildren();
+      }else{
+        getReportCardsOfChildrenByInstitution();
+      }
+      break;
+
     default:
       # code...
       break;
@@ -481,6 +489,89 @@
         echo number_format((float)$avg, 2, '.', '');
       }else {
         echo "0";
+      }
+
+      closeDb($conn);
+    }
+
+    function getReportCardsOfChildren(){
+
+      $conn = connectToDatabase();
+
+      $sql = "SELECT  C.CURP, name, grade, G.gradeId FROM Child C, Grade G, ReportCard RC " .
+              "WHERE C.CURP = RC.CURP AND G.gradeId = RC.gradeId ".
+              "GROUP BY C.CURP, G.gradeId;";
+
+      $result = mysqli_query($conn, $sql);
+
+      $table = "<table class='responsive-table striped teal lighten-3 z-depth-1 tabla-actividades'>
+                  <thead>
+                    <tr>
+                      <th>CURP</th>
+                      <th>Nombre</th>
+                      <th>Grado</th>
+                      <th>Eliminar</th>
+                    </tr>
+                  </thead>
+                  <tbody>";
+
+      if(mysqli_num_rows($result) > 0){
+          while($row = mysqli_fetch_assoc($result)){
+            $tempId = $row["CURP"] . "*" . $row["gradeId"];
+            $table .= "<tr id=\"" . $row["CURP"] . "\">
+                        <td>" . $row["CURP"] . "</td>
+                        <td>" . $row["name"] . "</td>
+                        <td>" . $row["grade"] . "</td>
+                        <td>" . "<a id='" . $tempId . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='deleteReportCard(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
+                      </tr>";
+          }
+        $table .= "</tbody></table>";
+        echo $table;
+
+      }else{
+        echo "Error";
+      }
+
+      closeDb($conn);
+
+    }
+
+    function getReportCardsOfChildrenByInstitution(){
+
+      $conn = connectToDatabase();
+
+      $sql = "SELECT  C.CURP, name, grade, G.gradeId FROM Child C, Grade G, ReportCard RC, BelongsToInstitution BTI " .
+            "WHERE C.CURP = RC.CURP AND G.gradeId = RC.gradeId AND BTI.institutionId = " . $_SESSION["institutionId"] . " AND C.CURP = BTI.CURP " .
+            "GROUP BY C.CURP, G.gradeId;";
+
+      $result = mysqli_query($conn, $sql);
+
+      $table = "<table class='responsive-table striped teal lighten-3 z-depth-1 tabla-actividades'>
+                  <thead>
+                    <tr>
+                      <th>CURP</th>
+                      <th>Nombre</th>
+                      <th>Grado</th>
+                      <th>Eliminar</th>
+                    </tr>
+                  </thead>
+                  <tbody>";
+
+      if(mysqli_num_rows($result) > 0){
+          while($row = mysqli_fetch_assoc($result)){
+            $tempId = $row["CURP"] . "*" . $row["gradeId"];
+            $table .= "<tr id=\"" . $row["CURP"] . "\">
+                        <td>" . $row["CURP"] . "</td>
+                        <td>" . $row["name"] . "</td>
+                        <td>" . $row["grade"] . "</td>
+                        <td>" . "<a id='" . $tempId . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='deleteReportCard(this.id)' href='#modal1'><i class='material-icons'>clear</i></a></td>
+                      </tr>";
+          }
+        $table .= "</tbody></table>";
+        echo $table;
+
+      }else{
+        echo "Error";
       }
 
       closeDb($conn);

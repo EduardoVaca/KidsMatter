@@ -21,54 +21,8 @@
         <div class="main-wrapper">
             <div class="row card-panel teal lighten-2 zdepth-3 ">
               <form class="col s12">
-                  <div class="input-field col s4">
-                      <input id="idBusqueda" type="text" class="validate cyan-text thin labelRegister">
-                      <label for="idBusqueda" class="black-text labelRegister">Nombre</label>
-                  </div>
+                <div id="reportCards" class="col s12">
 
-                  <div class="input-field col s4">
-                    <select>
-                      <option value="">Escolaridad</option>
-                      <option value="1">Option 1</option>
-                      <option value="2">Option 2</option>
-                      <option value="3">Option 3</option>
-                    </select>
-                </div>
-
-                <div class="col s12">
-                    <a class="btn waves-effect waves-light right">Buscar</a>
-                </div>
-                <div class="input-field col s12">
-                  <!-- parte a modificar con php -->
-                  <table class="striped justified centered teal lighten-3 z-depth-1 tabla-actividades ">
-                        <thead>
-                          <tr>
-                              <th data-field="id" >Nombre</th>
-                              <th data-field="escolaridad" >Boletas</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                           <tr>
-                            <td>
-                                <!--insertar tablas con php y jquery-->
-                                <p>Clase</p>
-                            </td>
-                            <td>
-                            <button id="boletas" data-target="modal1" class="btn waves-effect waves-light center btnTabla modal-trigger">Ver</button>
-                                <!-- parte a modificar con php
-                            Buscar nino
-                            mandar ajax rellenar tabla, sleccionar nino y hacer fade para
-                            reemplazar con tabla de boleta-->
-                            </td>
-                          </tr>
-                          <tr>
-                            <!--Parte a modificar con php
-                                Insertar resultados de busqueda-->
-                          </tr>
-                          <tr>
-                          </tr>
-                        </tbody>
-                  </table>
                 </div>
 
             </form>
@@ -94,6 +48,7 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/reportCardList.js"></script>
     <script>$(document).ready(function(){$('.modal-trigger').leanModal();});</script>
     <script>$(document).ready(function() { $('select').material_select();});</script>
 
