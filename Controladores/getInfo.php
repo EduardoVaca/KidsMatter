@@ -439,7 +439,7 @@
 
     function getMissingEducationLevel($CURP){
       $conn = connectToDatabase();
-      $sql = "SELECT grade FROM Grade WHERE gradeId NOT IN (".
+      $sql = "SELECT grade, gradeId FROM Grade WHERE gradeId NOT IN (".
               "Select gradeId FROM ReportCard WHERE CURP = '$CURP');";
 
       $result = mysqli_query($conn, $sql);
@@ -464,7 +464,7 @@
 
     function getStoredEducationLevel($CURP){
       $conn = connectToDatabase();
-      $sql = "SELECT grade FROM Grade WHERE gradeId IN (".
+      $sql = "SELECT grade, gradeId FROM Grade WHERE gradeId IN (".
               "Select gradeId FROM ReportCard WHERE CURP = '$CURP');";
 
       $result = mysqli_query($conn, $sql);
