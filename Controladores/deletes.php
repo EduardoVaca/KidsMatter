@@ -23,6 +23,12 @@ switch($action){
     $institutionId = $_POST['institutionId'];
     deleteInstitution($institutionId);
     break;
+
+  case 'deleteReportCard':
+    $CURP = $_POST["CURP"];
+    $gradeId = $_POST["gradeId"];
+    deleteReportCard($CURP, $gradeId);
+    break;
 }
 
 
@@ -126,6 +132,24 @@ function deleteInstitution($institutionId){
   mysqli_commit($conn);
   closeDb($conn);
 
+}
+
+
+function deleteReportCard($CURP, $gradeId){
+  $conn = connectToDatabase();
+
+  mysqli_begin_transaction($conn, MYSQLI_TRANS_START_READ_WRITE);
+
+  $sql = "DELETE FROM ReportCard WHERE CURP = '$CURP' AND gradeId = $gradeId";
+
+  if (mysqli_multi_query($conn, $sql)) {
+    echo "1";
+  } else {
+    echo "0" . mysqli_error($conn);
+  }
+
+  mysqli_commit($conn);
+  closeDb($conn);
 }
 
 ?>
