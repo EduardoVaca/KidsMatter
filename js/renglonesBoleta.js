@@ -108,7 +108,7 @@ function insertGradeInReportCard(){
           gradeLevelId: actualGradeLevel,
           gradeObtained: actualGradeObtained
     }, function(data){
-      alert(data);
+      //alert(data);
     });
 }
 
