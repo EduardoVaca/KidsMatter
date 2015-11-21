@@ -7,7 +7,7 @@ function getReportCardsTable(){
   $.post(
     "../Controladores/getInfo.php",
     {
-      action: "getReportCardsOfChildren";
+      action: "getReportCardsOfChildren",
     },
     function(data){
       if(data != "Error"){
