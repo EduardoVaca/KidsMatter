@@ -27,7 +27,7 @@ function deleteReportCard(id){
     $.post("../Controladores/deletes.php", {
       action: "deleteReportCard",
       CURP: array[0],
-      gradeId[1],
+      gradeId: array[1],
     },
     function(data){
       if(data == "1"){
