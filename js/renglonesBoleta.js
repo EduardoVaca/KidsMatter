@@ -19,9 +19,12 @@ function refresh(){
 }
 
 function getLevel(){
+  
+  var actualCURP = $('#secret').text();
 
   $.post("../Controladores/getInfo.php", {
-        action: "getEducationLevelFromDb",
+        action: "getMissingEducationLevel",
+        CURP: actualCURP,
   },
   function(data){
       //alert(data);
@@ -54,11 +57,8 @@ function getChildGPA(){
 
 function getCourse(){
 
-  var actualCURP = $('#secret').text();
-
   $.post("../Controladores/getInfo.php", {
-        action: "getMissingEducationLevel",
-        CURP: actualCURP,
+        action: "getCoursesFromDb",
   },
   function(data){
       //alert(data);
