@@ -76,7 +76,7 @@
 
     $result = mysqli_query($conn, $sql);
 
-    $table = "<table class='striped teal lighten-3 z-depth-1 tabla-actividades'>
+    $table = "<table class='responsive-table striped teal lighten-3 z-depth-1 tabla-actividades'>
                 <thead>
                   <tr>
                     <th>CURP</th>
@@ -93,7 +93,7 @@
                       <td>" . $row["CURP"] . "</td>
                       <td>" . $row["name"] . "</td>
                       <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id);refresh()' href='#modal1'><i class='material-icons'>add</i></a></td>
-                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal2'><i class='material-icons'>search</i></a></td>
+                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id);refreshModal2()' href='#modal2'><i class='material-icons'>search</i></a></td>
                     </tr>";
         }
       $table .= "</thead></table>";
@@ -116,7 +116,7 @@
 
     $result = mysqli_query($conn, $sql);
 
-    $table = "<table class='striped teal lighten-3 z-depth-1 tabla-actividades'>
+    $table = "<table class='responsive-table striped teal lighten-3 z-depth-1 tabla-actividades'>
                 <thead>
                   <tr>
                     <th>CURP</th>
@@ -133,7 +133,7 @@
                       <td>" . $row["CURP"] . "</td>
                       <td>" . $row["name"] . "</td>
                       <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id);refresh()' href='#modal1'><i class='material-icons'>add</i></a></td>
-                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id)' href='#modal2'><i class='material-icons'>search</i></a></td>
+                      <td>" . "<a id='" . $row["CURP"] . "' class='btn-floating medium waves-effect waves-light cyan z-depth-1 modal-trigger center' onclick='printId(this.id);refreshModal2()' href='#modal2'><i class='material-icons'>search</i></a></td>
                     </tr>";
         }
       $table .= "</thead></table>";
@@ -156,7 +156,7 @@
 
     $result = mysqli_query($conn, $sql);
 
-    $table = "<table class='striped teal lighten-3 z-depth-1 tabla-actividades'>
+    $table = "<table class='responsive-table striped teal lighten-3 z-depth-1 tabla-actividades'>
                 <thead>
                   <tr>
                     <th>CURP</th>
@@ -202,7 +202,7 @@
 
     $result = mysqli_query($conn, $sql);
 
-    $table = "<table class='striped teal lighten-3 z-depth-1 tabla-actividades'>
+    $table = "<table class='responsive-table striped teal lighten-3 z-depth-1 tabla-actividades'>
                 <thead>
                   <tr>
                     <th>Usuario</th>
@@ -240,7 +240,7 @@
 
         $result = mysqli_query($conn, $sql);
 
-        $table = "<table class='striped teal lighten-3 z-depth-1 tabla-actividades'>
+        $table = "<table class='responsive-table striped teal lighten-3 z-depth-1 tabla-actividades'>
                     <thead>
                       <tr>
                         <th>Nombre</th>
@@ -283,7 +283,7 @@
 
     $result = mysqli_query($conn, $sql);
 
-    $table = "<table class='striped teal lighten-3 z-depth-1 tabla-actividades'>
+    $table = "<table class='responsive-table striped teal lighten-3 z-depth-1 tabla-actividades'>
                 <thead>
                   <tr>
                     <th>CURP</th>
