@@ -48,6 +48,11 @@
       getEducationLevelFromDb();
       break;
 
+    case 'getMissingEducationLevel':
+      $CURP = $_POST["CURP"];
+      getMissingEducationLevel($CURP);
+      break;
+
     case 'getCoursesFromDb':
       getCoursesFromDb();
       break;
@@ -417,6 +422,31 @@
         }
 
         closeDb($conn);
+    }
+
+    function getMissingEducationLevel($CURP){
+      $conn = connectToDatabase();
+      $sql = "SELECT grade FROM Grade WHERE gradeId NOT IN (".
+              "Select gradeId FROM ReportCard WHERE CURP = '$CURP');";
+
+      $result = mysqli_query($conn, $sql);
+      $json = array();
+
+      if(mysqli_num_rows($result) > 0){
+          $json["status"] = "correct";
+          $json["num"] = mysqli_num_rows($result);
+          $option = "";
+
+          while($row = mysqli_fetch_assoc($result)){
+              $option.= "<option value=\"" . $row["gradeId"] . "\">" . $row["grade"] . "</option>";
+          }
+          $json["data"] = $option;
+          echo $option;
+      } else {
+          $json["status"] = "wrong";
+      }
+
+      closeDb($conn);
     }
 
     function getCoursesFromDb(){

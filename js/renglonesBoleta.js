@@ -43,7 +43,7 @@ function getChildGPA(){
         CURP:  actualCURP,
   },
   function(data){
-   
+
     if(!(data == "0")){
       $('#GPA').append("<b>" + data + "</b>");
     }else{
@@ -54,8 +54,11 @@ function getChildGPA(){
 
 function getCourse(){
 
+  var actualCURP = $('#secret').text();
+
   $.post("../Controladores/getInfo.php", {
-        action: "getCoursesFromDb",
+        action: "getMissingEducationLevel",
+        CURP: actualCURP,
   },
   function(data){
       //alert(data);
