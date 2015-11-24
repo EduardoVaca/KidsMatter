@@ -5,8 +5,8 @@ session_start();
 if($_SESSION["rolId"] == 1){
   echo "<div class='col s12  m12 l6'>
                       <div class='card center medium'>
-                          <div class='card-image waves-effect waves-block waves-light'>
-                              <img class='activator' src='../img/casa.jpg' style='width:100%;'>
+                          <div class='card-image waves-effect waves-block waves-light' style='height:80%;'>
+                              <img class='activator' src='../img/institutionIcon.jpg' style='width:100%;'>
                           </div>
                           <div class='card-content'>
                               <span class='card-title activator grey-text text-darken-4'>Instituciones</span>
@@ -28,8 +28,8 @@ if($_SESSION["rolId"] == 1){
 
   echo "<div class='col s12  m12 l6'>
                       <div class='card center medium'>
-                          <div class='card-image waves-effect waves-block waves-light'>
-                              <img class='activator' src='../img/user.png' style='width:100%;'>
+                          <div class='card-image waves-effect waves-block waves-light' style='height:80%;'>
+                              <img class='activator' src='../img/userIcon.png' style='width:100%;'>
                           </div>
                           <div class='card-content'>
                               <span class='card-title activator grey-text text-darken-4'>Usuarios</span>
